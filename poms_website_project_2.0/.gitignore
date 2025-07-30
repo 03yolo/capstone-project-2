@@ -1,0 +1,19 @@
+# Ignore build output
+bin/
+obj/
+
+# Ignore Visual Studio user-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Ignore .vs folder (Visual Studio workspace settings)
+.vs/
+
+# Ignore temporary files
+*.tmp
+*.log
+
+# Ignore published outputs
+publish/
