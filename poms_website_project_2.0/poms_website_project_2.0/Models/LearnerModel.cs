@@ -1,15 +1,22 @@
-﻿using System.Diagnostics;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Diagnostics;
 
 namespace poms_website_project_2._0.Models
 {
     public class LearnerModel
     {
-        public int LearnerId { get; set; }
+        [Key] 
+        [ForeignKey("LearnerNavigation")]
+        public int UserId { get; set; }
 
+        [Required(ErrorMessage = "Learner's LRN is required.")]
         public string Lrn { get; set; } = null!;
 
+        [Required(ErrorMessage = "Learner's birth date is required.")]
         public DateOnly BirthDate { get; set; }
 
+        [Required(ErrorMessage = "Learner's grade level is required.")]
         public byte GradeLevel { get; set; }
 
         public virtual ICollection<AssessmentGradeModel> AssessmentGrades { get; set; } = new List<AssessmentGradeModel>();

@@ -1,9 +1,13 @@
-﻿using System.Diagnostics;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Diagnostics;
 
 namespace poms_website_project_2._0.Models
 {
     public class FacultyModel
     {
+        [Key]
+        [ForeignKey("FacultyNavigation")]
         public int FacultyId { get; set; }
 
         public string EmployeeNo { get; set; } = null!;

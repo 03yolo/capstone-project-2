@@ -1,7 +1,12 @@
-﻿namespace poms_website_project_2._0.Models
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace poms_website_project_2._0.Models
 {
     public class AdminDetailModel
     {
+        [Key]
+        [ForeignKey("Admin")]
         public int AdminId { get; set; }
 
         public string Position { get; set; } = null!;
