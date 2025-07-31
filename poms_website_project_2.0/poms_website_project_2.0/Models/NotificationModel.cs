@@ -16,6 +16,6 @@ namespace poms_website_project_2._0.Models
 
         public DateTime CreatedAt { get; set; }
 
-        public virtual User User { get; set; } = null!;
+        public virtual UserModel User { get; set; } = null!;
     }
 }
