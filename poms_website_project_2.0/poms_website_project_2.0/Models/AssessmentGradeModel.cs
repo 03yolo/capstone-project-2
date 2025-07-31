@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace poms_website_project_2._0.Models
 {
@@ -27,12 +28,16 @@ namespace poms_website_project_2._0.Models
 
         public string Remarks { get; set; } = null!;
 
+        [ForeignKey("FacultyId")]
         public virtual FacultyModel Faculty { get; set; } = null!;
 
+        [ForeignKey("LearnerId")]
         public virtual LearnerModel Learner { get; set; } = null!;
 
+        [ForeignKey("SchoolYearId")]
         public virtual QuarterModel Quarter { get; set; } = null!;
 
+        [ForeignKey("SubjectId")]
         public virtual SubjectModel Subject { get; set; } = null!;
     }
 }

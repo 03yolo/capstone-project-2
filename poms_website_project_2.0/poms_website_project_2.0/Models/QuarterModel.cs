@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace poms_website_project_2._0.Models
 {
@@ -18,6 +19,7 @@ namespace poms_website_project_2._0.Models
 
         public virtual ICollection<AssessmentGradeModel> AssessmentGrades { get; set; } = new List<AssessmentGradeModel>();
 
+        [ForeignKey("SchoolYearId")]
         public virtual SchoolYearModel SchoolYear { get; set; } = null!;
     }
 }

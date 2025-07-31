@@ -7,7 +7,7 @@ namespace poms_website_project_2._0.Models
     {
         [Key]
         [ForeignKey("Admin")]
-        public int AdminId { get; set; }
+        public int UserId { get; set; }
 
         public string Position { get; set; } = null!;
 

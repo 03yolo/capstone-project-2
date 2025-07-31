@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace poms_website_project_2._0.Models
 {
@@ -39,10 +40,13 @@ namespace poms_website_project_2._0.Models
 
         public DateTime EncodedAt { get; set; }
 
+        [ForeignKey("FacultyId")]
         public virtual FacultyModel Faculty { get; set; } = null!;
 
+        [ForeignKey("LearnerId")]
         public virtual LearnerModel Learner { get; set; } = null!;
 
+        [ForeignKey("SubjectId")]
         public virtual SubjectModel Subject { get; set; } = null!;
     }
 }

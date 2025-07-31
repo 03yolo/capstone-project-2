@@ -8,7 +8,7 @@ namespace poms_website_project_2._0.Models
     {
         [Key]
         [ForeignKey("FacultyNavigation")]
-        public int FacultyId { get; set; }
+        public int UserId { get; set; }
 
         public string EmployeeNo { get; set; } = null!;
 
