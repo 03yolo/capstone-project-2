@@ -1,7 +1,11 @@
-﻿namespace poms_website_project_2._0.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace poms_website_project_2._0.Models
 {
     public class QuarterModel
     {
+        [Key]
+
         public int QuarterId { get; set; }
 
         public int SchoolYearId { get; set; }

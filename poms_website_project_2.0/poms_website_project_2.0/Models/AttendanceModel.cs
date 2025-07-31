@@ -1,7 +1,10 @@
-﻿namespace poms_website_project_2._0.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace poms_website_project_2._0.Models
 {
     public class AttendanceModel
     {
+        [Key]
         public int AttendanceId { get; set; }
 
         public int LearnerId { get; set; }

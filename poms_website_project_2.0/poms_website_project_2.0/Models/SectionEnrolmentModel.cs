@@ -1,9 +1,12 @@
-﻿using static System.Collections.Specialized.BitVector32;
+﻿using System.ComponentModel.DataAnnotations;
+using static System.Collections.Specialized.BitVector32;
 
 namespace poms_website_project_2._0.Models
 {
     public class SectionEnrolmentModel
     {
+        [Key]
+
         public int EnrolId { get; set; }
 
         public int LearnerId { get; set; }

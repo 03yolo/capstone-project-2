@@ -2,6 +2,8 @@
 {
     public class SchoolFormModel
     {
+        [Key]
+
         public int FormId { get; set; }
 
         public int LearnerId { get; set; }

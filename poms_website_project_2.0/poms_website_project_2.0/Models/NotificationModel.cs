@@ -1,11 +1,21 @@
-﻿namespace poms_website_project_2._0.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace poms_website_project_2._0.Models
 {
     public class NotificationModel
     {
-        public int ParentId { get; set; }
+        [Key]
 
-        public virtual ICollection<ParentLearnerModel> ParentLearners { get; set; } = new List<ParentLearnerModel>();
+        public int NotificationId { get; set; }
 
-        public virtual UserModel ParentNavigation { get; set; } = null!;
+        public int UserId { get; set; }
+
+        public string Message { get; set; } = null!;
+
+        public bool IsRead { get; set; }
+
+        public DateTime CreatedAt { get; set; }
+
+        public virtual User User { get; set; } = null!;
     }
 }

@@ -1,7 +1,10 @@
-﻿namespace poms_website_project_2._0.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace poms_website_project_2._0.Models
 {
     public class AuditLogModel
     {
+        [Key]
         public int LogId { get; set; }
 
         public int? UserId { get; set; }

@@ -1,9 +1,12 @@
-﻿using System.Diagnostics;
+﻿using System.ComponentModel.DataAnnotations;
+using System.Diagnostics;
 
 namespace poms_website_project_2._0.Models
 {
     public class SubjectModel
     {
+        [Key]
+
         public int SubjectId { get; set; }
 
         public string SubjectCode { get; set; } = null!;
