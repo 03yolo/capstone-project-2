@@ -12,6 +12,7 @@ namespace poms_website_project_2._0.Models
 
         public DateOnly SchoolDate { get; set; }
 
+        // 1: PRESENT - 2: ABSENT - 3: LATE
         public int AttendanceStatus { get; set; }
 
         [ForeignKey("LearnerId")]
