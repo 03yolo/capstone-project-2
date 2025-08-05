@@ -31,8 +31,6 @@ public class PomsDbContext : DbContext
 
     public DbSet<poms_website_project_2._0.Models.LearnerModel> LearnerModel { get; set; } = default!;
 
-    public DbSet<poms_website_project_2._0.Models.UserModel> UserModel { get; set; } = default!;
-
     public DbSet<poms_website_project_2._0.Models.NotificationModel> NotificationModel { get; set; } = default!;
 
     public DbSet<poms_website_project_2._0.Models.ParentLearnerModel> ParentLearnerModel { get; set; } = default!;
