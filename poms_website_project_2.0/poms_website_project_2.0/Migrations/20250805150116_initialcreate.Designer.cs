@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace poms_website_project_2._0.Migrations
 {
     [DbContext(typeof(PomsDbContext))]
-    [Migration("20250803144431_AssessmentFacultyLearnerUser")]
-    partial class AssessmentFacultyLearnerUser
+    [Migration("20250805150116_initialcreate")]
+    partial class initialcreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -61,23 +61,32 @@ namespace poms_website_project_2._0.Migrations
                     b.Property<int>("FacultyId")
                         .HasColumnType("int");
 
+                    b.Property<int?>("FacultyModelUserId")
+                        .HasColumnType("int");
+
                     b.Property<int>("LearnerId")
                         .HasColumnType("int");
 
+                    b.Property<int?>("LearnerModelUserId")
+                        .HasColumnType("int");
+
                     b.Property<int>("QuarterId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("QuarterModelQuarterId")
                         .HasColumnType("int");
 
                     b.Property<string>("Remarks")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("SchoolYearId")
-                        .HasColumnType("int");
-
                     b.Property<decimal>("Score")
                         .HasColumnType("decimal(18,2)");
 
                     b.Property<int>("SubjectId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("SubjectModelSubjectId")
                         .HasColumnType("int");
 
                     b.HasKey("AssessmentGradeId");
@@ -86,11 +95,19 @@ namespace poms_website_project_2._0.Migrations
 
                     b.HasIndex("FacultyId");
 
+                    b.HasIndex("FacultyModelUserId");
+
                     b.HasIndex("LearnerId");
 
-                    b.HasIndex("SchoolYearId");
+                    b.HasIndex("LearnerModelUserId");
+
+                    b.HasIndex("QuarterId");
+
+                    b.HasIndex("QuarterModelQuarterId");
 
                     b.HasIndex("SubjectId");
+
+                    b.HasIndex("SubjectModelSubjectId");
 
                     b.ToTable("AssessmentGradeModel");
                 });
@@ -136,7 +153,7 @@ namespace poms_website_project_2._0.Migrations
 
                     b.HasIndex("FacultyId");
 
-                    b.HasIndex("SchoolYearId");
+                    b.HasIndex("QuarterId");
 
                     b.HasIndex("SubjectId");
 
@@ -157,6 +174,9 @@ namespace poms_website_project_2._0.Migrations
                     b.Property<int>("LearnerId")
                         .HasColumnType("int");
 
+                    b.Property<int?>("LearnerModelUserId")
+                        .HasColumnType("int");
+
                     b.Property<DateOnly>("SchoolDate")
                         .HasColumnType("date");
 
@@ -164,7 +184,39 @@ namespace poms_website_project_2._0.Migrations
 
                     b.HasIndex("LearnerId");
 
+                    b.HasIndex("LearnerModelUserId");
+
                     b.ToTable("AttendanceModel");
+                });
+
+            modelBuilder.Entity("poms_website_project_2._0.Models.AuditLogModel", b =>
+                {
+                    b.Property<int>("LogId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("LogId"));
+
+                    b.Property<string>("Action")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("LogTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("RecordPk")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("TableName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("UserId")
+                        .HasColumnType("int");
+
+                    b.HasKey("LogId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("AuditLogModel");
                 });
 
             modelBuilder.Entity("poms_website_project_2._0.Models.FacultyLoadModel", b =>
@@ -178,24 +230,44 @@ namespace poms_website_project_2._0.Migrations
                     b.Property<int>("FacultyId")
                         .HasColumnType("int");
 
+                    b.Property<int?>("FacultyModelUserId")
+                        .HasColumnType("int");
+
                     b.Property<int>("SchoolYearId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("SchoolYearModelSchoolYearId")
                         .HasColumnType("int");
 
                     b.Property<int>("SectionId")
                         .HasColumnType("int");
 
+                    b.Property<int?>("SectionModelSectionId")
+                        .HasColumnType("int");
+
                     b.Property<int>("SubjectId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("SubjectModelSubjectId")
                         .HasColumnType("int");
 
                     b.HasKey("LoadId");
 
                     b.HasIndex("FacultyId");
 
+                    b.HasIndex("FacultyModelUserId");
+
                     b.HasIndex("SchoolYearId");
+
+                    b.HasIndex("SchoolYearModelSchoolYearId");
 
                     b.HasIndex("SectionId");
 
+                    b.HasIndex("SectionModelSectionId");
+
                     b.HasIndex("SubjectId");
+
+                    b.HasIndex("SubjectModelSubjectId");
 
                     b.ToTable("FacultyLoadModel");
                 });
@@ -231,10 +303,16 @@ namespace poms_website_project_2._0.Migrations
                     b.Property<int>("FacultyId")
                         .HasColumnType("int");
 
+                    b.Property<int?>("FacultyModelUserId")
+                        .HasColumnType("int");
+
                     b.Property<decimal?>("FinalGrade")
                         .HasColumnType("decimal(18,2)");
 
                     b.Property<int>("LearnerId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("LearnerModelUserId")
                         .HasColumnType("int");
 
                     b.Property<decimal?>("PtPercentage")
@@ -265,6 +343,9 @@ namespace poms_website_project_2._0.Migrations
                     b.Property<int>("SubjectId")
                         .HasColumnType("int");
 
+                    b.Property<int?>("SubjectModelSubjectId")
+                        .HasColumnType("int");
+
                     b.Property<decimal?>("WwPercentage")
                         .HasColumnType("decimal(18,2)");
 
@@ -278,11 +359,52 @@ namespace poms_website_project_2._0.Migrations
 
                     b.HasIndex("FacultyId");
 
+                    b.HasIndex("FacultyModelUserId");
+
                     b.HasIndex("LearnerId");
+
+                    b.HasIndex("LearnerModelUserId");
 
                     b.HasIndex("SubjectId");
 
+                    b.HasIndex("SubjectModelSubjectId");
+
                     b.ToTable("GradeModel");
+                });
+
+            modelBuilder.Entity("poms_website_project_2._0.Models.HomeCarouselItemModel", b =>
+                {
+                    b.Property<int>("CarouselItemId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CarouselItemId"));
+
+                    b.Property<string>("CaptionText")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("CaptionTitle")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("DisplayOrder")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ImagePath")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime>("UploadedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("UploadedBy")
+                        .HasColumnType("int");
+
+                    b.HasKey("CarouselItemId");
+
+                    b.ToTable("HomeCarouselItemModel");
                 });
 
             modelBuilder.Entity("poms_website_project_2._0.Models.LearnerModel", b =>
@@ -326,9 +448,14 @@ namespace poms_website_project_2._0.Migrations
                     b.Property<int>("UserId")
                         .HasColumnType("int");
 
+                    b.Property<int?>("UserModelUserId")
+                        .HasColumnType("int");
+
                     b.HasKey("NotificationId");
 
                     b.HasIndex("UserId");
+
+                    b.HasIndex("UserModelUserId");
 
                     b.ToTable("NotificationModel");
                 });
@@ -341,12 +468,22 @@ namespace poms_website_project_2._0.Migrations
                     b.Property<int>("LearnerId")
                         .HasColumnType("int");
 
+                    b.Property<int?>("LearnerModelUserId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("ParentModelUserId")
+                        .HasColumnType("int");
+
                     b.Property<string>("Relationship")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("ParentId");
 
                     b.HasIndex("LearnerId");
+
+                    b.HasIndex("LearnerModelUserId");
+
+                    b.HasIndex("ParentModelUserId");
 
                     b.ToTable("ParentLearnerModel");
                 });
@@ -378,12 +515,17 @@ namespace poms_website_project_2._0.Migrations
                     b.Property<int>("SchoolYearId")
                         .HasColumnType("int");
 
+                    b.Property<int?>("SchoolYearModelSchoolYearId")
+                        .HasColumnType("int");
+
                     b.Property<DateOnly>("StartDate")
                         .HasColumnType("date");
 
                     b.HasKey("QuarterId");
 
                     b.HasIndex("SchoolYearId");
+
+                    b.HasIndex("SchoolYearModelSchoolYearId");
 
                     b.ToTable("QuarterModel");
                 });
@@ -433,11 +575,16 @@ namespace poms_website_project_2._0.Migrations
                     b.Property<int>("LearnerId")
                         .HasColumnType("int");
 
+                    b.Property<int?>("LearnerModelUserId")
+                        .HasColumnType("int");
+
                     b.HasKey("FormId");
 
                     b.HasIndex("GeneratedByNavigationUserId");
 
                     b.HasIndex("LearnerId");
+
+                    b.HasIndex("LearnerModelUserId");
 
                     b.ToTable("SchoolFormModel");
                 });
@@ -472,19 +619,34 @@ namespace poms_website_project_2._0.Migrations
                     b.Property<int>("LearnerId")
                         .HasColumnType("int");
 
+                    b.Property<int?>("LearnerModelUserId")
+                        .HasColumnType("int");
+
                     b.Property<int>("SchoolYearId")
                         .HasColumnType("int");
 
+                    b.Property<int?>("SchoolYearModelSchoolYearId")
+                        .HasColumnType("int");
+
                     b.Property<int>("SectionId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("SectionModelSectionId")
                         .HasColumnType("int");
 
                     b.HasKey("EnrolId");
 
                     b.HasIndex("LearnerId");
 
+                    b.HasIndex("LearnerModelUserId");
+
                     b.HasIndex("SchoolYearId");
 
+                    b.HasIndex("SchoolYearModelSchoolYearId");
+
                     b.HasIndex("SectionId");
+
+                    b.HasIndex("SectionModelSectionId");
 
                     b.ToTable("SectionEnrolmentModel");
                 });
@@ -538,6 +700,9 @@ namespace poms_website_project_2._0.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("UserId"));
 
+                    b.Property<int?>("AdminDetailUserId")
+                        .HasColumnType("int");
+
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
@@ -569,6 +734,8 @@ namespace poms_website_project_2._0.Migrations
 
                     b.HasKey("UserId");
 
+                    b.HasIndex("AdminDetailUserId");
+
                     b.HasIndex("RoleId");
 
                     b.ToTable("UserModel");
@@ -577,9 +744,9 @@ namespace poms_website_project_2._0.Migrations
             modelBuilder.Entity("poms_website_project_2._0.Models.AdminDetailModel", b =>
                 {
                     b.HasOne("poms_website_project_2._0.Models.UserModel", "Admin")
-                        .WithOne("AdminDetail")
-                        .HasForeignKey("poms_website_project_2._0.Models.AdminDetailModel", "UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("Admin");
@@ -590,32 +757,48 @@ namespace poms_website_project_2._0.Migrations
                     b.HasOne("poms_website_project_2._0.Models.AssessmentModel", "Assessment")
                         .WithMany()
                         .HasForeignKey("AssessmentId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("poms_website_project_2._0.Models.FacultyModel", "Faculty")
-                        .WithMany("AssessmentGrades")
+                        .WithMany()
                         .HasForeignKey("FacultyId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
+
+                    b.HasOne("poms_website_project_2._0.Models.FacultyModel", null)
+                        .WithMany("AssessmentGrades")
+                        .HasForeignKey("FacultyModelUserId");
 
                     b.HasOne("poms_website_project_2._0.Models.LearnerModel", "Learner")
-                        .WithMany("AssessmentGrades")
+                        .WithMany()
                         .HasForeignKey("LearnerId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
+
+                    b.HasOne("poms_website_project_2._0.Models.LearnerModel", null)
+                        .WithMany("AssessmentGrades")
+                        .HasForeignKey("LearnerModelUserId");
 
                     b.HasOne("poms_website_project_2._0.Models.QuarterModel", "Quarter")
-                        .WithMany("AssessmentGrades")
-                        .HasForeignKey("SchoolYearId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .WithMany()
+                        .HasForeignKey("QuarterId")
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.HasOne("poms_website_project_2._0.Models.SubjectModel", "Subject")
+                    b.HasOne("poms_website_project_2._0.Models.QuarterModel", null)
                         .WithMany("AssessmentGrades")
+                        .HasForeignKey("QuarterModelQuarterId");
+
+                    b.HasOne("poms_website_project_2._0.Models.SubjectModel", "Subject")
+                        .WithMany()
                         .HasForeignKey("SubjectId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
+
+                    b.HasOne("poms_website_project_2._0.Models.SubjectModel", null)
+                        .WithMany("AssessmentGrades")
+                        .HasForeignKey("SubjectModelSubjectId");
 
                     b.Navigation("Assessment");
 
@@ -633,19 +816,19 @@ namespace poms_website_project_2._0.Migrations
                     b.HasOne("poms_website_project_2._0.Models.FacultyModel", "Faculty")
                         .WithMany()
                         .HasForeignKey("FacultyId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("poms_website_project_2._0.Models.QuarterModel", "Quarter")
                         .WithMany()
-                        .HasForeignKey("SchoolYearId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .HasForeignKey("QuarterId")
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("poms_website_project_2._0.Models.SubjectModel", "Subject")
                         .WithMany()
                         .HasForeignKey("SubjectId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("Faculty");
@@ -658,39 +841,69 @@ namespace poms_website_project_2._0.Migrations
             modelBuilder.Entity("poms_website_project_2._0.Models.AttendanceModel", b =>
                 {
                     b.HasOne("poms_website_project_2._0.Models.LearnerModel", "Learner")
-                        .WithMany("Attendances")
+                        .WithMany()
                         .HasForeignKey("LearnerId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
+                    b.HasOne("poms_website_project_2._0.Models.LearnerModel", null)
+                        .WithMany("Attendances")
+                        .HasForeignKey("LearnerModelUserId");
+
                     b.Navigation("Learner");
+                });
+
+            modelBuilder.Entity("poms_website_project_2._0.Models.AuditLogModel", b =>
+                {
+                    b.HasOne("poms_website_project_2._0.Models.UserModel", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("poms_website_project_2._0.Models.FacultyLoadModel", b =>
                 {
                     b.HasOne("poms_website_project_2._0.Models.FacultyModel", "Faculty")
-                        .WithMany("FacultyLoads")
+                        .WithMany()
                         .HasForeignKey("FacultyId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
+
+                    b.HasOne("poms_website_project_2._0.Models.FacultyModel", null)
+                        .WithMany("FacultyLoads")
+                        .HasForeignKey("FacultyModelUserId");
 
                     b.HasOne("poms_website_project_2._0.Models.SchoolYearModel", "SchoolYear")
-                        .WithMany("FacultyLoads")
+                        .WithMany()
                         .HasForeignKey("SchoolYearId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
+
+                    b.HasOne("poms_website_project_2._0.Models.SchoolYearModel", null)
+                        .WithMany("FacultyLoads")
+                        .HasForeignKey("SchoolYearModelSchoolYearId");
 
                     b.HasOne("poms_website_project_2._0.Models.SectionModel", "Section")
-                        .WithMany("FacultyLoads")
+                        .WithMany()
                         .HasForeignKey("SectionId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.HasOne("poms_website_project_2._0.Models.SubjectModel", "Subject")
+                    b.HasOne("poms_website_project_2._0.Models.SectionModel", null)
                         .WithMany("FacultyLoads")
+                        .HasForeignKey("SectionModelSectionId");
+
+                    b.HasOne("poms_website_project_2._0.Models.SubjectModel", "Subject")
+                        .WithMany()
                         .HasForeignKey("SubjectId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
+
+                    b.HasOne("poms_website_project_2._0.Models.SubjectModel", null)
+                        .WithMany("FacultyLoads")
+                        .HasForeignKey("SubjectModelSubjectId");
 
                     b.Navigation("Faculty");
 
@@ -715,22 +928,34 @@ namespace poms_website_project_2._0.Migrations
             modelBuilder.Entity("poms_website_project_2._0.Models.GradeModel", b =>
                 {
                     b.HasOne("poms_website_project_2._0.Models.FacultyModel", "Faculty")
-                        .WithMany("Grades")
+                        .WithMany()
                         .HasForeignKey("FacultyId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
+
+                    b.HasOne("poms_website_project_2._0.Models.FacultyModel", null)
+                        .WithMany("Grades")
+                        .HasForeignKey("FacultyModelUserId");
 
                     b.HasOne("poms_website_project_2._0.Models.LearnerModel", "Learner")
-                        .WithMany("Grades")
+                        .WithMany()
                         .HasForeignKey("LearnerId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.HasOne("poms_website_project_2._0.Models.SubjectModel", "Subject")
+                    b.HasOne("poms_website_project_2._0.Models.LearnerModel", null)
                         .WithMany("Grades")
+                        .HasForeignKey("LearnerModelUserId");
+
+                    b.HasOne("poms_website_project_2._0.Models.SubjectModel", "Subject")
+                        .WithMany()
                         .HasForeignKey("SubjectId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
+
+                    b.HasOne("poms_website_project_2._0.Models.SubjectModel", null)
+                        .WithMany("Grades")
+                        .HasForeignKey("SubjectModelSubjectId");
 
                     b.Navigation("Faculty");
 
@@ -753,10 +978,14 @@ namespace poms_website_project_2._0.Migrations
             modelBuilder.Entity("poms_website_project_2._0.Models.NotificationModel", b =>
                 {
                     b.HasOne("poms_website_project_2._0.Models.UserModel", "User")
-                        .WithMany("Notifications")
+                        .WithMany()
                         .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
+
+                    b.HasOne("poms_website_project_2._0.Models.UserModel", null)
+                        .WithMany("Notifications")
+                        .HasForeignKey("UserModelUserId");
 
                     b.Navigation("User");
                 });
@@ -764,16 +993,24 @@ namespace poms_website_project_2._0.Migrations
             modelBuilder.Entity("poms_website_project_2._0.Models.ParentLearnerModel", b =>
                 {
                     b.HasOne("poms_website_project_2._0.Models.LearnerModel", "Learner")
-                        .WithMany("ParentLearners")
+                        .WithMany()
                         .HasForeignKey("LearnerId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.HasOne("poms_website_project_2._0.Models.ParentModel", "Parent")
+                    b.HasOne("poms_website_project_2._0.Models.LearnerModel", null)
                         .WithMany("ParentLearners")
+                        .HasForeignKey("LearnerModelUserId");
+
+                    b.HasOne("poms_website_project_2._0.Models.ParentModel", "Parent")
+                        .WithMany()
                         .HasForeignKey("ParentId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
+
+                    b.HasOne("poms_website_project_2._0.Models.ParentModel", null)
+                        .WithMany("ParentLearners")
+                        .HasForeignKey("ParentModelUserId");
 
                     b.Navigation("Learner");
 
@@ -794,10 +1031,14 @@ namespace poms_website_project_2._0.Migrations
             modelBuilder.Entity("poms_website_project_2._0.Models.QuarterModel", b =>
                 {
                     b.HasOne("poms_website_project_2._0.Models.SchoolYearModel", "SchoolYear")
-                        .WithMany("Quarters")
+                        .WithMany()
                         .HasForeignKey("SchoolYearId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
+
+                    b.HasOne("poms_website_project_2._0.Models.SchoolYearModel", null)
+                        .WithMany("Quarters")
+                        .HasForeignKey("SchoolYearModelSchoolYearId");
 
                     b.Navigation("SchoolYear");
                 });
@@ -811,10 +1052,14 @@ namespace poms_website_project_2._0.Migrations
                         .IsRequired();
 
                     b.HasOne("poms_website_project_2._0.Models.LearnerModel", "Learner")
-                        .WithMany("SchoolForms")
+                        .WithMany()
                         .HasForeignKey("LearnerId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
+
+                    b.HasOne("poms_website_project_2._0.Models.LearnerModel", null)
+                        .WithMany("SchoolForms")
+                        .HasForeignKey("LearnerModelUserId");
 
                     b.Navigation("GeneratedByNavigation");
 
@@ -824,22 +1069,34 @@ namespace poms_website_project_2._0.Migrations
             modelBuilder.Entity("poms_website_project_2._0.Models.SectionEnrolmentModel", b =>
                 {
                     b.HasOne("poms_website_project_2._0.Models.LearnerModel", "Learner")
-                        .WithMany("SectionEnrolments")
+                        .WithMany()
                         .HasForeignKey("LearnerId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
+
+                    b.HasOne("poms_website_project_2._0.Models.LearnerModel", null)
+                        .WithMany("SectionEnrolments")
+                        .HasForeignKey("LearnerModelUserId");
 
                     b.HasOne("poms_website_project_2._0.Models.SchoolYearModel", "SchoolYear")
-                        .WithMany("SectionEnrolments")
+                        .WithMany()
                         .HasForeignKey("SchoolYearId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.HasOne("poms_website_project_2._0.Models.SectionModel", "Section")
+                    b.HasOne("poms_website_project_2._0.Models.SchoolYearModel", null)
                         .WithMany("SectionEnrolments")
+                        .HasForeignKey("SchoolYearModelSchoolYearId");
+
+                    b.HasOne("poms_website_project_2._0.Models.SectionModel", "Section")
+                        .WithMany()
                         .HasForeignKey("SectionId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
+
+                    b.HasOne("poms_website_project_2._0.Models.SectionModel", null)
+                        .WithMany("SectionEnrolments")
+                        .HasForeignKey("SectionModelSectionId");
 
                     b.Navigation("Learner");
 
@@ -850,11 +1107,17 @@ namespace poms_website_project_2._0.Migrations
 
             modelBuilder.Entity("poms_website_project_2._0.Models.UserModel", b =>
                 {
+                    b.HasOne("poms_website_project_2._0.Models.AdminDetailModel", "AdminDetail")
+                        .WithMany()
+                        .HasForeignKey("AdminDetailUserId");
+
                     b.HasOne("poms_website_project_2._0.Models.RoleModel", "Role")
                         .WithMany("Users")
                         .HasForeignKey("RoleId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("AdminDetail");
 
                     b.Navigation("Role");
                 });
@@ -925,8 +1188,6 @@ namespace poms_website_project_2._0.Migrations
 
             modelBuilder.Entity("poms_website_project_2._0.Models.UserModel", b =>
                 {
-                    b.Navigation("AdminDetail");
-
                     b.Navigation("Faculty");
 
                     b.Navigation("Learner");

@@ -10,7 +10,26 @@ public class PomsDbContext : DbContext
     public PomsDbContext (DbContextOptions<PomsDbContext> options): base(options)
     {
     }
+    // INDEPENDENT MODELS
+    public DbSet<poms_website_project_2._0.Models.FacultyModel> FacultyModel { get; set; } = default!;
 
+    public DbSet<poms_website_project_2._0.Models.HomeCarouselItemModel> HomeCarouselItemModel { get; set; } = default!;
+
+    public DbSet<poms_website_project_2._0.Models.LearnerModel> LearnerModel { get; set; } = default!;
+
+    public DbSet<poms_website_project_2._0.Models.ParentModel> ParentModel { get; set; } = default!;
+
+    public DbSet<poms_website_project_2._0.Models.RoleModel> RoleModel { get; set; } = default!;
+
+    public DbSet<poms_website_project_2._0.Models.SchoolYearModel> SchoolYearModel { get; set; } = default!;
+
+    public DbSet<poms_website_project_2._0.Models.SectionModel> SectionModel { get; set; } = default!;
+
+    public DbSet<poms_website_project_2._0.Models.SubjectModel> SubjectModel { get; set; } = default!;
+
+    public DbSet<poms_website_project_2._0.Models.UserModel> UserModel { get; set; } = default!;
+
+   // DEPENDENT MODELS
     public DbSet<poms_website_project_2._0.Models.AdminDetailModel> AdminDetailModel { get; set; } = default!;
 
     public DbSet<poms_website_project_2._0.Models.AssessmentGradeModel> AssessmentGradeModel { get; set; } = default!;
@@ -23,35 +42,17 @@ public class PomsDbContext : DbContext
 
     public DbSet<poms_website_project_2._0.Models.FacultyLoadModel> FacultyLoadModel { get; set; } = default!;
 
-    public DbSet<poms_website_project_2._0.Models.FacultyModel> FacultyModel { get; set; } = default!;
-
     public DbSet<poms_website_project_2._0.Models.GradeModel> GradeModel { get; set; } = default!;
-
-    public DbSet<poms_website_project_2._0.Models.HomeCarouselItemModel> HomeCarouselItemModel { get; set; } = default!;
-
-    public DbSet<poms_website_project_2._0.Models.LearnerModel> LearnerModel { get; set; } = default!;
 
     public DbSet<poms_website_project_2._0.Models.NotificationModel> NotificationModel { get; set; } = default!;
 
     public DbSet<poms_website_project_2._0.Models.ParentLearnerModel> ParentLearnerModel { get; set; } = default!;
 
-    public DbSet<poms_website_project_2._0.Models.ParentModel> ParentModel { get; set; } = default!;
-
     public DbSet<poms_website_project_2._0.Models.QuarterModel> QuarterModel { get; set; } = default!;
-
-    public DbSet<poms_website_project_2._0.Models.RoleModel> RoleModel { get; set; } = default!;
 
     public DbSet<poms_website_project_2._0.Models.SchoolFormModel> SchoolFormModel { get; set; } = default!;
 
-    public DbSet<poms_website_project_2._0.Models.SchoolYearModel> SchoolYearModel { get; set; } = default!;
-
     public DbSet<poms_website_project_2._0.Models.SectionEnrolmentModel> SectionEnrolmentModel { get; set; } = default!;
-
-    public DbSet<poms_website_project_2._0.Models.SectionModel> SectionModel { get; set; } = default!;
-
-    public DbSet<poms_website_project_2._0.Models.SubjectModel> SubjectModel { get; set; } = default!;
-
-    public DbSet<poms_website_project_2._0.Models.UserModel> UserModel { get; set; } = default!;
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -166,20 +167,20 @@ public class PomsDbContext : DbContext
         {
             entity.HasKey(e => e.GradeId);
 
-            entity.HasOne(g => g.Learner)
-                  .WithMany()
-                  .HasForeignKey(g => g.LearnerId)
-                  .OnDelete(DeleteBehavior.Restrict);
+            entity.HasOne(e => e.Learner)
+                .WithMany()
+                .HasForeignKey(e => e.LearnerId)
+                .OnDelete(DeleteBehavior.Restrict);
 
-            entity.HasOne(g => g.Faculty)
-                  .WithMany()
-                  .HasForeignKey(g => g.FacultyId)
-                  .OnDelete(DeleteBehavior.Restrict);
+            entity.HasOne(e => e.Faculty)
+                .WithMany()
+                .HasForeignKey(e => e.FacultyId)
+                .OnDelete(DeleteBehavior.Restrict);
 
-            entity.HasOne(g => g.Subject)
-                  .WithMany()
-                  .HasForeignKey(g => g.SubjectId)
-                  .OnDelete(DeleteBehavior.Restrict);
+            entity.HasOne(e => e.Subject)
+                .WithMany()
+                .HasForeignKey(e => e.SubjectId)
+                .OnDelete(DeleteBehavior.Restrict);
         });
 
         modelBuilder.Entity<NotificationModel>(entity =>

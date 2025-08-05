@@ -6,11 +6,30 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace poms_website_project_2._0.Migrations
 {
     /// <inheritdoc />
-    public partial class AssessmentFacultyLearnerUser : Migration
+    public partial class initialcreate : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.CreateTable(
+                name: "HomeCarouselItemModel",
+                columns: table => new
+                {
+                    CarouselItemId = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    ImagePath = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    CaptionTitle = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    CaptionText = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    DisplayOrder = table.Column<int>(type: "int", nullable: false),
+                    IsActive = table.Column<bool>(type: "bit", nullable: false),
+                    UploadedBy = table.Column<int>(type: "int", nullable: false),
+                    UploadedAt = table.Column<DateTime>(type: "datetime2", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_HomeCarouselItemModel", x => x.CarouselItemId);
+                });
+
             migrationBuilder.CreateTable(
                 name: "RoleModel",
                 columns: table => new
@@ -67,32 +86,6 @@ namespace poms_website_project_2._0.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "UserModel",
-                columns: table => new
-                {
-                    UserId = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    RoleId = table.Column<int>(type: "int", nullable: false),
-                    Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    PasswordHash = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    LastName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    FirstName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    MiddleName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    IsActive = table.Column<bool>(type: "bit", nullable: false),
-                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_UserModel", x => x.UserId);
-                    table.ForeignKey(
-                        name: "FK_UserModel_RoleModel_RoleId",
-                        column: x => x.RoleId,
-                        principalTable: "RoleModel",
-                        principalColumn: "RoleId",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "QuarterModel",
                 columns: table => new
                 {
@@ -101,7 +94,8 @@ namespace poms_website_project_2._0.Migrations
                     SchoolYearId = table.Column<int>(type: "int", nullable: false),
                     QuarterNo = table.Column<byte>(type: "tinyint", nullable: false),
                     StartDate = table.Column<DateOnly>(type: "date", nullable: false),
-                    EndDate = table.Column<DateOnly>(type: "date", nullable: false)
+                    EndDate = table.Column<DateOnly>(type: "date", nullable: false),
+                    SchoolYearModelSchoolYearId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -111,7 +105,12 @@ namespace poms_website_project_2._0.Migrations
                         column: x => x.SchoolYearId,
                         principalTable: "SchoolYearModel",
                         principalColumn: "SchoolYearId",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_QuarterModel_SchoolYearModel_SchoolYearModelSchoolYearId",
+                        column: x => x.SchoolYearModelSchoolYearId,
+                        principalTable: "SchoolYearModel",
+                        principalColumn: "SchoolYearId");
                 });
 
             migrationBuilder.CreateTable(
@@ -126,12 +125,61 @@ namespace poms_website_project_2._0.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_AdminDetailModel", x => x.UserId);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "UserModel",
+                columns: table => new
+                {
+                    UserId = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    RoleId = table.Column<int>(type: "int", nullable: false),
+                    Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    PasswordHash = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    LastName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    FirstName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    MiddleName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    IsActive = table.Column<bool>(type: "bit", nullable: false),
+                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    AdminDetailUserId = table.Column<int>(type: "int", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_UserModel", x => x.UserId);
                     table.ForeignKey(
-                        name: "FK_AdminDetailModel_UserModel_UserId",
+                        name: "FK_UserModel_AdminDetailModel_AdminDetailUserId",
+                        column: x => x.AdminDetailUserId,
+                        principalTable: "AdminDetailModel",
+                        principalColumn: "UserId");
+                    table.ForeignKey(
+                        name: "FK_UserModel_RoleModel_RoleId",
+                        column: x => x.RoleId,
+                        principalTable: "RoleModel",
+                        principalColumn: "RoleId",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "AuditLogModel",
+                columns: table => new
+                {
+                    LogId = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    UserId = table.Column<int>(type: "int", nullable: true),
+                    Action = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    TableName = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    RecordPk = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    LogTime = table.Column<DateTime>(type: "datetime2", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_AuditLogModel", x => x.LogId);
+                    table.ForeignKey(
+                        name: "FK_AuditLogModel_UserModel_UserId",
                         column: x => x.UserId,
                         principalTable: "UserModel",
                         principalColumn: "UserId",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
@@ -182,7 +230,8 @@ namespace poms_website_project_2._0.Migrations
                     UserId = table.Column<int>(type: "int", nullable: false),
                     Message = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     IsRead = table.Column<bool>(type: "bit", nullable: false),
-                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false)
+                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    UserModelUserId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -192,7 +241,12 @@ namespace poms_website_project_2._0.Migrations
                         column: x => x.UserId,
                         principalTable: "UserModel",
                         principalColumn: "UserId",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_NotificationModel_UserModel_UserModelUserId",
+                        column: x => x.UserModelUserId,
+                        principalTable: "UserModel",
+                        principalColumn: "UserId");
                 });
 
             migrationBuilder.CreateTable(
@@ -236,19 +290,19 @@ namespace poms_website_project_2._0.Migrations
                         column: x => x.FacultyId,
                         principalTable: "FacultyModel",
                         principalColumn: "UserId",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_AssessmentModel_QuarterModel_SchoolYearId",
-                        column: x => x.SchoolYearId,
+                        name: "FK_AssessmentModel_QuarterModel_QuarterId",
+                        column: x => x.QuarterId,
                         principalTable: "QuarterModel",
                         principalColumn: "QuarterId",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_AssessmentModel_SubjectModel_SubjectId",
                         column: x => x.SubjectId,
                         principalTable: "SubjectModel",
                         principalColumn: "SubjectId",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
@@ -260,7 +314,11 @@ namespace poms_website_project_2._0.Migrations
                     FacultyId = table.Column<int>(type: "int", nullable: false),
                     SubjectId = table.Column<int>(type: "int", nullable: false),
                     SectionId = table.Column<int>(type: "int", nullable: false),
-                    SchoolYearId = table.Column<int>(type: "int", nullable: false)
+                    SchoolYearId = table.Column<int>(type: "int", nullable: false),
+                    FacultyModelUserId = table.Column<int>(type: "int", nullable: true),
+                    SchoolYearModelSchoolYearId = table.Column<int>(type: "int", nullable: true),
+                    SectionModelSectionId = table.Column<int>(type: "int", nullable: true),
+                    SubjectModelSubjectId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -270,25 +328,45 @@ namespace poms_website_project_2._0.Migrations
                         column: x => x.FacultyId,
                         principalTable: "FacultyModel",
                         principalColumn: "UserId",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_FacultyLoadModel_FacultyModel_FacultyModelUserId",
+                        column: x => x.FacultyModelUserId,
+                        principalTable: "FacultyModel",
+                        principalColumn: "UserId");
                     table.ForeignKey(
                         name: "FK_FacultyLoadModel_SchoolYearModel_SchoolYearId",
                         column: x => x.SchoolYearId,
                         principalTable: "SchoolYearModel",
                         principalColumn: "SchoolYearId",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_FacultyLoadModel_SchoolYearModel_SchoolYearModelSchoolYearId",
+                        column: x => x.SchoolYearModelSchoolYearId,
+                        principalTable: "SchoolYearModel",
+                        principalColumn: "SchoolYearId");
                     table.ForeignKey(
                         name: "FK_FacultyLoadModel_SectionModel_SectionId",
                         column: x => x.SectionId,
                         principalTable: "SectionModel",
                         principalColumn: "SectionId",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_FacultyLoadModel_SectionModel_SectionModelSectionId",
+                        column: x => x.SectionModelSectionId,
+                        principalTable: "SectionModel",
+                        principalColumn: "SectionId");
                     table.ForeignKey(
                         name: "FK_FacultyLoadModel_SubjectModel_SubjectId",
                         column: x => x.SubjectId,
                         principalTable: "SubjectModel",
                         principalColumn: "SubjectId",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_FacultyLoadModel_SubjectModel_SubjectModelSubjectId",
+                        column: x => x.SubjectModelSubjectId,
+                        principalTable: "SubjectModel",
+                        principalColumn: "SubjectId");
                 });
 
             migrationBuilder.CreateTable(
@@ -299,7 +377,8 @@ namespace poms_website_project_2._0.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     LearnerId = table.Column<int>(type: "int", nullable: false),
                     SchoolDate = table.Column<DateOnly>(type: "date", nullable: false),
-                    AttendanceStatus = table.Column<int>(type: "int", nullable: false)
+                    AttendanceStatus = table.Column<int>(type: "int", nullable: false),
+                    LearnerModelUserId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -309,7 +388,12 @@ namespace poms_website_project_2._0.Migrations
                         column: x => x.LearnerId,
                         principalTable: "LearnerModel",
                         principalColumn: "UserId",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_AttendanceModel_LearnerModel_LearnerModelUserId",
+                        column: x => x.LearnerModelUserId,
+                        principalTable: "LearnerModel",
+                        principalColumn: "UserId");
                 });
 
             migrationBuilder.CreateTable(
@@ -333,7 +417,10 @@ namespace poms_website_project_2._0.Migrations
                     QaPercentage = table.Column<decimal>(type: "decimal(18,2)", nullable: true),
                     FinalGrade = table.Column<decimal>(type: "decimal(18,2)", nullable: true),
                     Remarks = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    EncodedAt = table.Column<DateTime>(type: "datetime2", nullable: false)
+                    EncodedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    FacultyModelUserId = table.Column<int>(type: "int", nullable: true),
+                    LearnerModelUserId = table.Column<int>(type: "int", nullable: true),
+                    SubjectModelSubjectId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -343,19 +430,34 @@ namespace poms_website_project_2._0.Migrations
                         column: x => x.FacultyId,
                         principalTable: "FacultyModel",
                         principalColumn: "UserId",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_GradeModel_FacultyModel_FacultyModelUserId",
+                        column: x => x.FacultyModelUserId,
+                        principalTable: "FacultyModel",
+                        principalColumn: "UserId");
                     table.ForeignKey(
                         name: "FK_GradeModel_LearnerModel_LearnerId",
                         column: x => x.LearnerId,
                         principalTable: "LearnerModel",
                         principalColumn: "UserId",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_GradeModel_LearnerModel_LearnerModelUserId",
+                        column: x => x.LearnerModelUserId,
+                        principalTable: "LearnerModel",
+                        principalColumn: "UserId");
                     table.ForeignKey(
                         name: "FK_GradeModel_SubjectModel_SubjectId",
                         column: x => x.SubjectId,
                         principalTable: "SubjectModel",
                         principalColumn: "SubjectId",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_GradeModel_SubjectModel_SubjectModelSubjectId",
+                        column: x => x.SubjectModelSubjectId,
+                        principalTable: "SubjectModel",
+                        principalColumn: "SubjectId");
                 });
 
             migrationBuilder.CreateTable(
@@ -369,7 +471,8 @@ namespace poms_website_project_2._0.Migrations
                     FilePath = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     GeneratedBy = table.Column<int>(type: "int", nullable: false),
                     GeneratedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    GeneratedByNavigationUserId = table.Column<int>(type: "int", nullable: false)
+                    GeneratedByNavigationUserId = table.Column<int>(type: "int", nullable: false),
+                    LearnerModelUserId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -379,7 +482,12 @@ namespace poms_website_project_2._0.Migrations
                         column: x => x.LearnerId,
                         principalTable: "LearnerModel",
                         principalColumn: "UserId",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_SchoolFormModel_LearnerModel_LearnerModelUserId",
+                        column: x => x.LearnerModelUserId,
+                        principalTable: "LearnerModel",
+                        principalColumn: "UserId");
                     table.ForeignKey(
                         name: "FK_SchoolFormModel_UserModel_GeneratedByNavigationUserId",
                         column: x => x.GeneratedByNavigationUserId,
@@ -396,7 +504,10 @@ namespace poms_website_project_2._0.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     LearnerId = table.Column<int>(type: "int", nullable: false),
                     SectionId = table.Column<int>(type: "int", nullable: false),
-                    SchoolYearId = table.Column<int>(type: "int", nullable: false)
+                    SchoolYearId = table.Column<int>(type: "int", nullable: false),
+                    LearnerModelUserId = table.Column<int>(type: "int", nullable: true),
+                    SchoolYearModelSchoolYearId = table.Column<int>(type: "int", nullable: true),
+                    SectionModelSectionId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -406,19 +517,34 @@ namespace poms_website_project_2._0.Migrations
                         column: x => x.LearnerId,
                         principalTable: "LearnerModel",
                         principalColumn: "UserId",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_SectionEnrolmentModel_LearnerModel_LearnerModelUserId",
+                        column: x => x.LearnerModelUserId,
+                        principalTable: "LearnerModel",
+                        principalColumn: "UserId");
                     table.ForeignKey(
                         name: "FK_SectionEnrolmentModel_SchoolYearModel_SchoolYearId",
                         column: x => x.SchoolYearId,
                         principalTable: "SchoolYearModel",
                         principalColumn: "SchoolYearId",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_SectionEnrolmentModel_SchoolYearModel_SchoolYearModelSchoolYearId",
+                        column: x => x.SchoolYearModelSchoolYearId,
+                        principalTable: "SchoolYearModel",
+                        principalColumn: "SchoolYearId");
                     table.ForeignKey(
                         name: "FK_SectionEnrolmentModel_SectionModel_SectionId",
                         column: x => x.SectionId,
                         principalTable: "SectionModel",
                         principalColumn: "SectionId",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_SectionEnrolmentModel_SectionModel_SectionModelSectionId",
+                        column: x => x.SectionModelSectionId,
+                        principalTable: "SectionModel",
+                        principalColumn: "SectionId");
                 });
 
             migrationBuilder.CreateTable(
@@ -427,7 +553,9 @@ namespace poms_website_project_2._0.Migrations
                 {
                     ParentId = table.Column<int>(type: "int", nullable: false),
                     LearnerId = table.Column<int>(type: "int", nullable: false),
-                    Relationship = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    Relationship = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    LearnerModelUserId = table.Column<int>(type: "int", nullable: true),
+                    ParentModelUserId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -437,13 +565,23 @@ namespace poms_website_project_2._0.Migrations
                         column: x => x.LearnerId,
                         principalTable: "LearnerModel",
                         principalColumn: "UserId",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_ParentLearnerModel_LearnerModel_LearnerModelUserId",
+                        column: x => x.LearnerModelUserId,
+                        principalTable: "LearnerModel",
+                        principalColumn: "UserId");
                     table.ForeignKey(
                         name: "FK_ParentLearnerModel_ParentModel_ParentId",
                         column: x => x.ParentId,
                         principalTable: "ParentModel",
                         principalColumn: "UserId",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_ParentLearnerModel_ParentModel_ParentModelUserId",
+                        column: x => x.ParentModelUserId,
+                        principalTable: "ParentModel",
+                        principalColumn: "UserId");
                 });
 
             migrationBuilder.CreateTable(
@@ -460,7 +598,10 @@ namespace poms_website_project_2._0.Migrations
                     Score = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     DateGiven = table.Column<DateOnly>(type: "date", nullable: true),
                     Remarks = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    SchoolYearId = table.Column<int>(type: "int", nullable: false)
+                    FacultyModelUserId = table.Column<int>(type: "int", nullable: true),
+                    LearnerModelUserId = table.Column<int>(type: "int", nullable: true),
+                    QuarterModelQuarterId = table.Column<int>(type: "int", nullable: true),
+                    SubjectModelSubjectId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -470,31 +611,51 @@ namespace poms_website_project_2._0.Migrations
                         column: x => x.AssessmentId,
                         principalTable: "AssessmentModel",
                         principalColumn: "AssessmentId",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_AssessmentGradeModel_FacultyModel_FacultyId",
                         column: x => x.FacultyId,
                         principalTable: "FacultyModel",
                         principalColumn: "UserId",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_AssessmentGradeModel_FacultyModel_FacultyModelUserId",
+                        column: x => x.FacultyModelUserId,
+                        principalTable: "FacultyModel",
+                        principalColumn: "UserId");
                     table.ForeignKey(
                         name: "FK_AssessmentGradeModel_LearnerModel_LearnerId",
                         column: x => x.LearnerId,
                         principalTable: "LearnerModel",
                         principalColumn: "UserId",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_AssessmentGradeModel_QuarterModel_SchoolYearId",
-                        column: x => x.SchoolYearId,
+                        name: "FK_AssessmentGradeModel_LearnerModel_LearnerModelUserId",
+                        column: x => x.LearnerModelUserId,
+                        principalTable: "LearnerModel",
+                        principalColumn: "UserId");
+                    table.ForeignKey(
+                        name: "FK_AssessmentGradeModel_QuarterModel_QuarterId",
+                        column: x => x.QuarterId,
                         principalTable: "QuarterModel",
                         principalColumn: "QuarterId",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_AssessmentGradeModel_QuarterModel_QuarterModelQuarterId",
+                        column: x => x.QuarterModelQuarterId,
+                        principalTable: "QuarterModel",
+                        principalColumn: "QuarterId");
                     table.ForeignKey(
                         name: "FK_AssessmentGradeModel_SubjectModel_SubjectId",
                         column: x => x.SubjectId,
                         principalTable: "SubjectModel",
                         principalColumn: "SubjectId",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_AssessmentGradeModel_SubjectModel_SubjectModelSubjectId",
+                        column: x => x.SubjectModelSubjectId,
+                        principalTable: "SubjectModel",
+                        principalColumn: "SubjectId");
                 });
 
             migrationBuilder.CreateIndex(
@@ -508,14 +669,29 @@ namespace poms_website_project_2._0.Migrations
                 column: "FacultyId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_AssessmentGradeModel_FacultyModelUserId",
+                table: "AssessmentGradeModel",
+                column: "FacultyModelUserId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_AssessmentGradeModel_LearnerId",
                 table: "AssessmentGradeModel",
                 column: "LearnerId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_AssessmentGradeModel_SchoolYearId",
+                name: "IX_AssessmentGradeModel_LearnerModelUserId",
                 table: "AssessmentGradeModel",
-                column: "SchoolYearId");
+                column: "LearnerModelUserId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_AssessmentGradeModel_QuarterId",
+                table: "AssessmentGradeModel",
+                column: "QuarterId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_AssessmentGradeModel_QuarterModelQuarterId",
+                table: "AssessmentGradeModel",
+                column: "QuarterModelQuarterId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_AssessmentGradeModel_SubjectId",
@@ -523,14 +699,19 @@ namespace poms_website_project_2._0.Migrations
                 column: "SubjectId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_AssessmentGradeModel_SubjectModelSubjectId",
+                table: "AssessmentGradeModel",
+                column: "SubjectModelSubjectId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_AssessmentModel_FacultyId",
                 table: "AssessmentModel",
                 column: "FacultyId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_AssessmentModel_SchoolYearId",
+                name: "IX_AssessmentModel_QuarterId",
                 table: "AssessmentModel",
-                column: "SchoolYearId");
+                column: "QuarterId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_AssessmentModel_SubjectId",
@@ -543,9 +724,24 @@ namespace poms_website_project_2._0.Migrations
                 column: "LearnerId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_AttendanceModel_LearnerModelUserId",
+                table: "AttendanceModel",
+                column: "LearnerModelUserId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_AuditLogModel_UserId",
+                table: "AuditLogModel",
+                column: "UserId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_FacultyLoadModel_FacultyId",
                 table: "FacultyLoadModel",
                 column: "FacultyId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_FacultyLoadModel_FacultyModelUserId",
+                table: "FacultyLoadModel",
+                column: "FacultyModelUserId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_FacultyLoadModel_SchoolYearId",
@@ -553,9 +749,19 @@ namespace poms_website_project_2._0.Migrations
                 column: "SchoolYearId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_FacultyLoadModel_SchoolYearModelSchoolYearId",
+                table: "FacultyLoadModel",
+                column: "SchoolYearModelSchoolYearId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_FacultyLoadModel_SectionId",
                 table: "FacultyLoadModel",
                 column: "SectionId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_FacultyLoadModel_SectionModelSectionId",
+                table: "FacultyLoadModel",
+                column: "SectionModelSectionId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_FacultyLoadModel_SubjectId",
@@ -563,9 +769,19 @@ namespace poms_website_project_2._0.Migrations
                 column: "SubjectId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_FacultyLoadModel_SubjectModelSubjectId",
+                table: "FacultyLoadModel",
+                column: "SubjectModelSubjectId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_GradeModel_FacultyId",
                 table: "GradeModel",
                 column: "FacultyId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_GradeModel_FacultyModelUserId",
+                table: "GradeModel",
+                column: "FacultyModelUserId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_GradeModel_LearnerId",
@@ -573,9 +789,19 @@ namespace poms_website_project_2._0.Migrations
                 column: "LearnerId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_GradeModel_LearnerModelUserId",
+                table: "GradeModel",
+                column: "LearnerModelUserId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_GradeModel_SubjectId",
                 table: "GradeModel",
                 column: "SubjectId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_GradeModel_SubjectModelSubjectId",
+                table: "GradeModel",
+                column: "SubjectModelSubjectId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_NotificationModel_UserId",
@@ -583,14 +809,34 @@ namespace poms_website_project_2._0.Migrations
                 column: "UserId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_NotificationModel_UserModelUserId",
+                table: "NotificationModel",
+                column: "UserModelUserId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_ParentLearnerModel_LearnerId",
                 table: "ParentLearnerModel",
                 column: "LearnerId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_ParentLearnerModel_LearnerModelUserId",
+                table: "ParentLearnerModel",
+                column: "LearnerModelUserId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_ParentLearnerModel_ParentModelUserId",
+                table: "ParentLearnerModel",
+                column: "ParentModelUserId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_QuarterModel_SchoolYearId",
                 table: "QuarterModel",
                 column: "SchoolYearId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_QuarterModel_SchoolYearModelSchoolYearId",
+                table: "QuarterModel",
+                column: "SchoolYearModelSchoolYearId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_SchoolFormModel_GeneratedByNavigationUserId",
@@ -603,9 +849,19 @@ namespace poms_website_project_2._0.Migrations
                 column: "LearnerId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_SchoolFormModel_LearnerModelUserId",
+                table: "SchoolFormModel",
+                column: "LearnerModelUserId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_SectionEnrolmentModel_LearnerId",
                 table: "SectionEnrolmentModel",
                 column: "LearnerId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_SectionEnrolmentModel_LearnerModelUserId",
+                table: "SectionEnrolmentModel",
+                column: "LearnerModelUserId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_SectionEnrolmentModel_SchoolYearId",
@@ -613,21 +869,45 @@ namespace poms_website_project_2._0.Migrations
                 column: "SchoolYearId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_SectionEnrolmentModel_SchoolYearModelSchoolYearId",
+                table: "SectionEnrolmentModel",
+                column: "SchoolYearModelSchoolYearId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_SectionEnrolmentModel_SectionId",
                 table: "SectionEnrolmentModel",
                 column: "SectionId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_SectionEnrolmentModel_SectionModelSectionId",
+                table: "SectionEnrolmentModel",
+                column: "SectionModelSectionId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_UserModel_AdminDetailUserId",
+                table: "UserModel",
+                column: "AdminDetailUserId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_UserModel_RoleId",
                 table: "UserModel",
                 column: "RoleId");
+
+            migrationBuilder.AddForeignKey(
+                name: "FK_AdminDetailModel_UserModel_UserId",
+                table: "AdminDetailModel",
+                column: "UserId",
+                principalTable: "UserModel",
+                principalColumn: "UserId",
+                onDelete: ReferentialAction.Restrict);
         }
 
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropTable(
-                name: "AdminDetailModel");
+            migrationBuilder.DropForeignKey(
+                name: "FK_AdminDetailModel_UserModel_UserId",
+                table: "AdminDetailModel");
 
             migrationBuilder.DropTable(
                 name: "AssessmentGradeModel");
@@ -636,10 +916,16 @@ namespace poms_website_project_2._0.Migrations
                 name: "AttendanceModel");
 
             migrationBuilder.DropTable(
+                name: "AuditLogModel");
+
+            migrationBuilder.DropTable(
                 name: "FacultyLoadModel");
 
             migrationBuilder.DropTable(
                 name: "GradeModel");
+
+            migrationBuilder.DropTable(
+                name: "HomeCarouselItemModel");
 
             migrationBuilder.DropTable(
                 name: "NotificationModel");
@@ -675,10 +961,13 @@ namespace poms_website_project_2._0.Migrations
                 name: "SubjectModel");
 
             migrationBuilder.DropTable(
+                name: "SchoolYearModel");
+
+            migrationBuilder.DropTable(
                 name: "UserModel");
 
             migrationBuilder.DropTable(
-                name: "SchoolYearModel");
+                name: "AdminDetailModel");
 
             migrationBuilder.DropTable(
                 name: "RoleModel");
