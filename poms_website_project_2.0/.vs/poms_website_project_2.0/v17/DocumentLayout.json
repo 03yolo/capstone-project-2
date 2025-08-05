@@ -1,9 +1,25 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\College\\CAPSTONE\\VS Files\\poms-repos-2\\capstone-project-2\\poms_website_project_2.0\\",
+  "WorkspaceRootPath": "C:\\Users\\Ammiel Jamir\\Desktop\\Capstone Project 2025\\capstone-repos-2\\capstone-project-2\\poms_website_project_2.0\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{6B53F231-4F56-4BF9-B90A-E40EFAD43D01}|poms_website_project_2.0\\poms_website_project_2.0.csproj|d:\\college\\capstone\\vs files\\poms-repos-2\\capstone-project-2\\poms_website_project_2.0\\poms_website_project_2.0\\data\\pomsdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{6B53F231-4F56-4BF9-B90A-E40EFAD43D01}|poms_website_project_2.0\\poms_website_project_2.0.csproj|c:\\users\\ammiel jamir\\desktop\\capstone project 2025\\capstone-repos-2\\capstone-project-2\\poms_website_project_2.0\\poms_website_project_2.0\\views\\shared\\_dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6B53F231-4F56-4BF9-B90A-E40EFAD43D01}|poms_website_project_2.0\\poms_website_project_2.0.csproj|solutionrelative:poms_website_project_2.0\\views\\shared\\_dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6B53F231-4F56-4BF9-B90A-E40EFAD43D01}|poms_website_project_2.0\\poms_website_project_2.0.csproj|c:\\users\\ammiel jamir\\desktop\\capstone project 2025\\capstone-repos-2\\capstone-project-2\\poms_website_project_2.0\\poms_website_project_2.0\\controllers\\dashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6B53F231-4F56-4BF9-B90A-E40EFAD43D01}|poms_website_project_2.0\\poms_website_project_2.0.csproj|solutionrelative:poms_website_project_2.0\\controllers\\dashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6B53F231-4F56-4BF9-B90A-E40EFAD43D01}|poms_website_project_2.0\\poms_website_project_2.0.csproj|c:\\users\\ammiel jamir\\desktop\\capstone project 2025\\capstone-repos-2\\capstone-project-2\\poms_website_project_2.0\\poms_website_project_2.0\\views\\facultymodels\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6B53F231-4F56-4BF9-B90A-E40EFAD43D01}|poms_website_project_2.0\\poms_website_project_2.0.csproj|solutionrelative:poms_website_project_2.0\\views\\facultymodels\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6B53F231-4F56-4BF9-B90A-E40EFAD43D01}|poms_website_project_2.0\\poms_website_project_2.0.csproj|c:\\users\\ammiel jamir\\desktop\\capstone project 2025\\capstone-repos-2\\capstone-project-2\\poms_website_project_2.0\\poms_website_project_2.0\\views\\learnermodels\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6B53F231-4F56-4BF9-B90A-E40EFAD43D01}|poms_website_project_2.0\\poms_website_project_2.0.csproj|solutionrelative:poms_website_project_2.0\\views\\learnermodels\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6B53F231-4F56-4BF9-B90A-E40EFAD43D01}|poms_website_project_2.0\\poms_website_project_2.0.csproj|c:\\users\\ammiel jamir\\desktop\\capstone project 2025\\capstone-repos-2\\capstone-project-2\\poms_website_project_2.0\\poms_website_project_2.0\\data\\pomsdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6B53F231-4F56-4BF9-B90A-E40EFAD43D01}|poms_website_project_2.0\\poms_website_project_2.0.csproj|solutionrelative:poms_website_project_2.0\\data\\pomsdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -14,19 +30,71 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 3,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Ammiel Jamir\\Desktop\\Capstone Project 2025\\capstone-repos-2\\capstone-project-2\\poms_website_project_2.0\\poms_website_project_2.0\\Views\\FacultyModels\\Index.cshtml",
+              "RelativeDocumentMoniker": "poms_website_project_2.0\\Views\\FacultyModels\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Ammiel Jamir\\Desktop\\Capstone Project 2025\\capstone-repos-2\\capstone-project-2\\poms_website_project_2.0\\poms_website_project_2.0\\Views\\FacultyModels\\Index.cshtml",
+              "RelativeToolTip": "poms_website_project_2.0\\Views\\FacultyModels\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-05T10:38:04.5Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
             },
             {
               "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Ammiel Jamir\\Desktop\\Capstone Project 2025\\capstone-repos-2\\capstone-project-2\\poms_website_project_2.0\\poms_website_project_2.0\\Views\\LearnerModels\\Index.cshtml",
+              "RelativeDocumentMoniker": "poms_website_project_2.0\\Views\\LearnerModels\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Ammiel Jamir\\Desktop\\Capstone Project 2025\\capstone-repos-2\\capstone-project-2\\poms_website_project_2.0\\poms_website_project_2.0\\Views\\LearnerModels\\Index.cshtml",
+              "RelativeToolTip": "poms_website_project_2.0\\Views\\LearnerModels\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-05T10:37:15.366Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "_Dashboard.cshtml",
+              "DocumentMoniker": "C:\\Users\\Ammiel Jamir\\Desktop\\Capstone Project 2025\\capstone-repos-2\\capstone-project-2\\poms_website_project_2.0\\poms_website_project_2.0\\Views\\Shared\\_Dashboard.cshtml",
+              "RelativeDocumentMoniker": "poms_website_project_2.0\\Views\\Shared\\_Dashboard.cshtml",
+              "ToolTip": "C:\\Users\\Ammiel Jamir\\Desktop\\Capstone Project 2025\\capstone-repos-2\\capstone-project-2\\poms_website_project_2.0\\poms_website_project_2.0\\Views\\Shared\\_Dashboard.cshtml",
+              "RelativeToolTip": "poms_website_project_2.0\\Views\\Shared\\_Dashboard.cshtml",
+              "ViewState": "AgIAAFEAAAAAAAAAAAAAAF4AAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-05T09:36:35.603Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "DashboardController.cs",
+              "DocumentMoniker": "C:\\Users\\Ammiel Jamir\\Desktop\\Capstone Project 2025\\capstone-repos-2\\capstone-project-2\\poms_website_project_2.0\\poms_website_project_2.0\\Controllers\\DashboardController.cs",
+              "RelativeDocumentMoniker": "poms_website_project_2.0\\Controllers\\DashboardController.cs",
+              "ToolTip": "C:\\Users\\Ammiel Jamir\\Desktop\\Capstone Project 2025\\capstone-repos-2\\capstone-project-2\\poms_website_project_2.0\\poms_website_project_2.0\\Controllers\\DashboardController.cs",
+              "RelativeToolTip": "poms_website_project_2.0\\Controllers\\DashboardController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAABfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-05T03:55:14.265Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "PomsDbContext.cs",
-              "DocumentMoniker": "D:\\College\\CAPSTONE\\VS Files\\poms-repos-2\\capstone-project-2\\poms_website_project_2.0\\poms_website_project_2.0\\Data\\PomsDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\Ammiel Jamir\\Desktop\\Capstone Project 2025\\capstone-repos-2\\capstone-project-2\\poms_website_project_2.0\\poms_website_project_2.0\\Data\\PomsDbContext.cs",
               "RelativeDocumentMoniker": "poms_website_project_2.0\\Data\\PomsDbContext.cs",
-              "ToolTip": "D:\\College\\CAPSTONE\\VS Files\\poms-repos-2\\capstone-project-2\\poms_website_project_2.0\\poms_website_project_2.0\\Data\\PomsDbContext.cs",
+              "ToolTip": "C:\\Users\\Ammiel Jamir\\Desktop\\Capstone Project 2025\\capstone-repos-2\\capstone-project-2\\poms_website_project_2.0\\poms_website_project_2.0\\Data\\PomsDbContext.cs",
               "RelativeToolTip": "poms_website_project_2.0\\Data\\PomsDbContext.cs",
               "ViewState": "AgIAAA8AAAAAAAAAAAAYwAgAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",

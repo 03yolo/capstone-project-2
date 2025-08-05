@@ -1,0 +1,100 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - POMS</title>
+
+    <!--CSS here for now-->
+    <style>
+        .content-wrapper {
+            margin-left: 250px;
+            margin-top: 60px;
+            padding: 20px;
+            background-color: #fff;
+            min-height: 100vh;
+        }
+    </style>
+
+</head>
+<body>
+
+    <aside class="sidebar">
+        <div class="sidebar-logo">
+            <img src="@Url.Content("~/images/Prudencia Logo.png")" alt="POMS Logo" loading="lazy">
+        </div>
+        <ul class="sidebar-menu">
+            <!--Will show on the navbar depending on the user Role-->
+            <!--ADMIN-->
+            @if (User.IsInRole("Admin"))
+            {
+                //link href to /[folder name]/[cshtml name]
+                <li class="nav-item">
+                    <a class="nav-link" href="?LearnerModels/Index" aria-label="Learners Database">
+                        <i class="bi bi-database"></i>Learners Database
+                        </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/FacultyModels/Index" aria-label="Faculty Database">
+                        <i class="bi bi-person-vcard-fill"></i>Faculty Database
+                    </a>
+                </li>
+            }
+            <!--Faculty-->
+            @if (User.IsInRole("Faculty"))
+            {
+                //link href to /[folder name]/[cshtml name]
+                <li class="nav-item">
+                    <a class="nav-link" href="" aria-label="Encode Grades">
+                        <i class="bi bi-database"></i>Encode Grades
+                    </a>
+                </li>
+            }
+            @if (User.IsInRole("Learner"))
+            {
+                //link href to /[folder name]/[cshtml name]
+                <li class="nav-item">
+                    <a class="nav-link" href="" aria-label="Grades">
+                        <i class="bi bi-database"></i>Grades
+                    </a>
+                </li>
+            }
+            @if (User.IsInRole("Parent"))
+            {
+                //link href to /[folder name]/[cshtml name]
+                <li class="nav-item">
+                    <a class="nav-link" href="" aria-label="Grades">
+                        <i class="bi bi-database"></i>Grades
+                    </a>
+                </li>
+            }
+            @if (User.IsInRole("Learner") || User.IsInRole("Parent"))
+            {
+                //link href to /[folder name]/[cshtml name]
+                <li class="nav-item">
+                    <a class="nav-link" href="" aria-label="FAQ">
+                        <i class=""></i>Frequently Asked Questions
+                    </a>
+                </li>
+            }
+            @if (User.IsInRole("Learner") || User.IsInRole("Parent") || User.IsInRole("Admin") || User.IsInRole("Faculty"))
+            {
+                //link href to /[folder name]/[cshtml name]
+                <li class="nav-item">
+                    <a class="nav-link" href="" aria-label="Help Center">
+                        <i class=""></i>Help Center
+                    </a>
+                </li>
+            }
+        </ul>
+
+    </aside>    
+    <div class="content-wrapper">
+        <!--Main Content Here-->
+        <main>
+            @RenderBody()
+        </main>
+    </div>
+
+</body>
+</html>
