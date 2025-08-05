@@ -29,7 +29,7 @@ namespace poms_website_project_2._0.Models
         [ForeignKey("LearnerId")]
         public virtual LearnerModel Learner { get; set; } = null!;
 
-        [ForeignKey("SchoolYearId")]
+        [ForeignKey("QuarterId")]
         public virtual QuarterModel Quarter { get; set; } = null!;
 
         [ForeignKey("SubjectId")]
