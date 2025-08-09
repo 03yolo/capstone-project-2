@@ -32,6 +32,18 @@ build_property.EnableCodeStyleSeverity =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/College/CAPSTONE/VS Files/poms-repos-2/capstone-project-2/poms_website_project_2.0/poms_website_project_2.0/Views/Account/FP_ChangePassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxGUF9DaGFuZ2VQYXNzd29yZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/College/CAPSTONE/VS Files/poms-repos-2/capstone-project-2/poms_website_project_2.0/poms_website_project_2.0/Views/Account/FP_GetEmail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxGUF9HZXRFbWFpbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/College/CAPSTONE/VS Files/poms-repos-2/capstone-project-2/poms_website_project_2.0/poms_website_project_2.0/Views/Account/LoginPage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpblBhZ2UuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/College/CAPSTONE/VS Files/poms-repos-2/capstone-project-2/poms_website_project_2.0/poms_website_project_2.0/Views/AssessmentModels/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXNzZXNzbWVudE1vZGVsc1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -98,6 +110,22 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/College/CAPSTONE/VS Files/poms-repos-2/capstone-project-2/poms_website_project_2.0/poms_website_project_2.0/Views/LearnerModels/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGVhcm5lck1vZGVsc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/College/CAPSTONE/VS Files/poms-repos-2/capstone-project-2/poms_website_project_2.0/poms_website_project_2.0/Views/OtherPage/EditProfile.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3RoZXJQYWdlXEVkaXRQcm9maWxlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/College/CAPSTONE/VS Files/poms-repos-2/capstone-project-2/poms_website_project_2.0/poms_website_project_2.0/Views/OtherPage/FAQs.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3RoZXJQYWdlXEZBUXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/College/CAPSTONE/VS Files/poms-repos-2/capstone-project-2/poms_website_project_2.0/poms_website_project_2.0/Views/OtherPage/HelpCenter.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3RoZXJQYWdlXEhlbHBDZW50ZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/College/CAPSTONE/VS Files/poms-repos-2/capstone-project-2/poms_website_project_2.0/poms_website_project_2.0/Views/OtherPage/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3RoZXJQYWdlXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/College/CAPSTONE/VS Files/poms-repos-2/capstone-project-2/poms_website_project_2.0/poms_website_project_2.0/Views/Shared/Error.cshtml]
