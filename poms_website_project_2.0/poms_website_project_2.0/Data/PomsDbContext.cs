@@ -11,6 +11,8 @@ public class PomsDbContext : DbContext
     {
     }
     // INDEPENDENT MODELS
+    public DbSet<poms_website_project_2._0.Models.ChangePasswordModel> ChangePasswordModel { get; set; } = default!;
+
     public DbSet<poms_website_project_2._0.Models.FacultyModel> FacultyModel { get; set; } = default!;
 
     public DbSet<poms_website_project_2._0.Models.HomeCarouselItemModel> HomeCarouselItemModel { get; set; } = default!;

@@ -1,0 +1,25 @@
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace poms_website_project_2._0.Models
+{
+    [NotMapped]
+    public class ChangePasswordModel
+    {
+        // Current password is required
+        [Required]
+        [Display(Name = "Current password")]
+        public string OldPassword { get; set; }
+
+        // New password is required
+        [Required]
+        [Display(Name = "New password")]
+        public string NewPassword { get; set; }
+
+        // Confirmation for the new password
+        [Required]
+        // Validates that the confirmation matches the new password
+        [Compare("NewPassword", ErrorMessage = "The confirmation password does not match the new password.")]
+        public string Confirm { get; set; }
+    }
+}

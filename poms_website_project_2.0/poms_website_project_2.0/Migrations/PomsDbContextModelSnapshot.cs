@@ -38,7 +38,7 @@ namespace poms_website_project_2._0.Migrations
 
                     b.HasKey("UserId");
 
-                    b.ToTable("AdminDetailModel");
+                    b.ToTable("AdminDetailModel", (string)null);
                 });
 
             modelBuilder.Entity("poms_website_project_2._0.Models.AssessmentGradeModel", b =>
@@ -106,7 +106,7 @@ namespace poms_website_project_2._0.Migrations
 
                     b.HasIndex("SubjectModelSubjectId");
 
-                    b.ToTable("AssessmentGradeModel");
+                    b.ToTable("AssessmentGradeModel", (string)null);
                 });
 
             modelBuilder.Entity("poms_website_project_2._0.Models.AssessmentModel", b =>
@@ -154,7 +154,7 @@ namespace poms_website_project_2._0.Migrations
 
                     b.HasIndex("SubjectId");
 
-                    b.ToTable("AssessmentModel");
+                    b.ToTable("AssessmentModel", (string)null);
                 });
 
             modelBuilder.Entity("poms_website_project_2._0.Models.AttendanceModel", b =>
@@ -183,7 +183,7 @@ namespace poms_website_project_2._0.Migrations
 
                     b.HasIndex("LearnerModelUserId");
 
-                    b.ToTable("AttendanceModel");
+                    b.ToTable("AttendanceModel", (string)null);
                 });
 
             modelBuilder.Entity("poms_website_project_2._0.Models.AuditLogModel", b =>
@@ -213,7 +213,7 @@ namespace poms_website_project_2._0.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("AuditLogModel");
+                    b.ToTable("AuditLogModel", (string)null);
                 });
 
             modelBuilder.Entity("poms_website_project_2._0.Models.FacultyLoadModel", b =>
@@ -266,7 +266,7 @@ namespace poms_website_project_2._0.Migrations
 
                     b.HasIndex("SubjectModelSubjectId");
 
-                    b.ToTable("FacultyLoadModel");
+                    b.ToTable("FacultyLoadModel", (string)null);
                 });
 
             modelBuilder.Entity("poms_website_project_2._0.Models.FacultyModel", b =>
@@ -283,7 +283,7 @@ namespace poms_website_project_2._0.Migrations
 
                     b.HasKey("UserId");
 
-                    b.ToTable("FacultyModel");
+                    b.ToTable("FacultyModel", (string)null);
                 });
 
             modelBuilder.Entity("poms_website_project_2._0.Models.GradeModel", b =>
@@ -366,7 +366,7 @@ namespace poms_website_project_2._0.Migrations
 
                     b.HasIndex("SubjectModelSubjectId");
 
-                    b.ToTable("GradeModel");
+                    b.ToTable("GradeModel", (string)null);
                 });
 
             modelBuilder.Entity("poms_website_project_2._0.Models.HomeCarouselItemModel", b =>
@@ -401,7 +401,7 @@ namespace poms_website_project_2._0.Migrations
 
                     b.HasKey("CarouselItemId");
 
-                    b.ToTable("HomeCarouselItemModel");
+                    b.ToTable("HomeCarouselItemModel", (string)null);
                 });
 
             modelBuilder.Entity("poms_website_project_2._0.Models.LearnerModel", b =>
@@ -421,7 +421,7 @@ namespace poms_website_project_2._0.Migrations
 
                     b.HasKey("UserId");
 
-                    b.ToTable("LearnerModel");
+                    b.ToTable("LearnerModel", (string)null);
                 });
 
             modelBuilder.Entity("poms_website_project_2._0.Models.NotificationModel", b =>
@@ -454,7 +454,7 @@ namespace poms_website_project_2._0.Migrations
 
                     b.HasIndex("UserModelUserId");
 
-                    b.ToTable("NotificationModel");
+                    b.ToTable("NotificationModel", (string)null);
                 });
 
             modelBuilder.Entity("poms_website_project_2._0.Models.ParentLearnerModel", b =>
@@ -482,7 +482,7 @@ namespace poms_website_project_2._0.Migrations
 
                     b.HasIndex("ParentModelUserId");
 
-                    b.ToTable("ParentLearnerModel");
+                    b.ToTable("ParentLearnerModel", (string)null);
                 });
 
             modelBuilder.Entity("poms_website_project_2._0.Models.ParentModel", b =>
@@ -492,7 +492,7 @@ namespace poms_website_project_2._0.Migrations
 
                     b.HasKey("UserId");
 
-                    b.ToTable("ParentModel");
+                    b.ToTable("ParentModel", (string)null);
                 });
 
             modelBuilder.Entity("poms_website_project_2._0.Models.QuarterModel", b =>
@@ -524,7 +524,7 @@ namespace poms_website_project_2._0.Migrations
 
                     b.HasIndex("SchoolYearModelSchoolYearId");
 
-                    b.ToTable("QuarterModel");
+                    b.ToTable("QuarterModel", (string)null);
                 });
 
             modelBuilder.Entity("poms_website_project_2._0.Models.RoleModel", b =>
@@ -541,7 +541,7 @@ namespace poms_website_project_2._0.Migrations
 
                     b.HasKey("RoleId");
 
-                    b.ToTable("RoleModel");
+                    b.ToTable("RoleModel", (string)null);
                 });
 
             modelBuilder.Entity("poms_website_project_2._0.Models.SchoolFormModel", b =>
@@ -583,7 +583,7 @@ namespace poms_website_project_2._0.Migrations
 
                     b.HasIndex("LearnerModelUserId");
 
-                    b.ToTable("SchoolFormModel");
+                    b.ToTable("SchoolFormModel", (string)null);
                 });
 
             modelBuilder.Entity("poms_website_project_2._0.Models.SchoolYearModel", b =>
@@ -602,7 +602,7 @@ namespace poms_website_project_2._0.Migrations
 
                     b.HasKey("SchoolYearId");
 
-                    b.ToTable("SchoolYearModel");
+                    b.ToTable("SchoolYearModel", (string)null);
                 });
 
             modelBuilder.Entity("poms_website_project_2._0.Models.SectionEnrolmentModel", b =>
@@ -645,7 +645,7 @@ namespace poms_website_project_2._0.Migrations
 
                     b.HasIndex("SectionModelSectionId");
 
-                    b.ToTable("SectionEnrolmentModel");
+                    b.ToTable("SectionEnrolmentModel", (string)null);
                 });
 
             modelBuilder.Entity("poms_website_project_2._0.Models.SectionModel", b =>
@@ -665,7 +665,7 @@ namespace poms_website_project_2._0.Migrations
 
                     b.HasKey("SectionId");
 
-                    b.ToTable("SectionModel");
+                    b.ToTable("SectionModel", (string)null);
                 });
 
             modelBuilder.Entity("poms_website_project_2._0.Models.SubjectModel", b =>
@@ -686,7 +686,7 @@ namespace poms_website_project_2._0.Migrations
 
                     b.HasKey("SubjectId");
 
-                    b.ToTable("SubjectModel");
+                    b.ToTable("SubjectModel", (string)null);
                 });
 
             modelBuilder.Entity("poms_website_project_2._0.Models.UserModel", b =>
@@ -735,7 +735,7 @@ namespace poms_website_project_2._0.Migrations
 
                     b.HasIndex("RoleId");
 
-                    b.ToTable("UserModel");
+                    b.ToTable("UserModel", (string)null);
                 });
 
             modelBuilder.Entity("poms_website_project_2._0.Models.AdminDetailModel", b =>

@@ -1,5 +1,51 @@
-﻿@*
+﻿@model poms_website_project_2._0.Models.UserModel
+
+@*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
+}
+
+<div class="account-container">
+	<div class="account-wrapper">
+		<h1 class="login-heading">Welcome to POMS</h1>
+		<p class="centered-text">
+			Prudencia D. Fule Memorial National High School<br />
+			Online Management System
+		</p>
+		<div class="account-box">
+			<form asp-action="Login" method="post">
+				<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+				<div class="mb-3">
+					<label asp-for="Email" class="form-label"></label>
+					<input asp-for="Email" class="form-control" />
+					<span asp-validation-for="Email" class="text-danger"></span>
+				</div>
+				<div class="mb-3">
+					<label asp-for="PasswordHash" class="form-label"></label>
+					<input asp-for="PasswordHash" type="password" class="form-control" />
+					<span asp-validation-for="PasswordHash" class="text-danger"></span>
+				</div>
+
+				<input type="submit" value="Login" class="custom-login-btn" />
+				<p class="text-center mt-2">
+					<a asp-controller="Account" asp-action="VerifyEmail" class="forgot-password-link">
+						Forgot Password?
+					</a>
+				</p>
+
+
+				<!-- Temporary linked to Home instead of Forgot Password -->
+				<div class="text-center">
+					<a asp-controller="Home" asp-action="Index" class="text-decoration-none forgot-password-link">Back</a>
+				</div>
+			</form>
+
+		</div>
+	</div>
+
+@section Scripts {
+	@{
+		await Html.RenderPartialAsync("_ValidationScriptsPartial.cshtml");
+	}
 }
