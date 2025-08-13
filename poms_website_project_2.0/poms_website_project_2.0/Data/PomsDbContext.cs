@@ -4,6 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using poms_website_project_2._0.Models;
+using poms_website_project_2._0.Data.Entities;
+
 
 public class PomsDbContext : DbContext
 {
@@ -13,13 +15,13 @@ public class PomsDbContext : DbContext
     // INDEPENDENT MODELS
     public DbSet<poms_website_project_2._0.Models.ChangePasswordModel> ChangePasswordModel { get; set; } = default!;
 
-    public DbSet<poms_website_project_2._0.Models.FacultyModel> FacultyModel { get; set; } = default!;
+    public DbSet<Faculty> Faculty{ get; set; } = default!;
 
     public DbSet<poms_website_project_2._0.Models.HomeCarouselItemModel> HomeCarouselItemModel { get; set; } = default!;
 
-    public DbSet<poms_website_project_2._0.Models.LearnerModel> LearnerModel { get; set; } = default!;
+    public DbSet<Learner> Learner { get; set; } = default!;
 
-    public DbSet<poms_website_project_2._0.Models.ParentModel> ParentModel { get; set; } = default!;
+    public DbSet<Parent> Parent { get; set; } = default!;
 
     public DbSet<poms_website_project_2._0.Models.RoleModel> RoleModel { get; set; } = default!;
 
@@ -32,7 +34,7 @@ public class PomsDbContext : DbContext
     public DbSet<poms_website_project_2._0.Models.UserModel> UserModel { get; set; } = default!;
 
    // DEPENDENT MODELS
-    public DbSet<poms_website_project_2._0.Models.AdminDetailModel> AdminDetailModel { get; set; } = default!;
+    public DbSet<AdminDetail> AdminDetailModel { get; set; } = default!;
 
     public DbSet<poms_website_project_2._0.Models.AssessmentGradeModel> AssessmentGradeModel { get; set; } = default!;
 
@@ -44,7 +46,7 @@ public class PomsDbContext : DbContext
 
     public DbSet<poms_website_project_2._0.Models.FacultyLoadModel> FacultyLoadModel { get; set; } = default!;
 
-    public DbSet<poms_website_project_2._0.Models.GradeModel> GradeModel { get; set; } = default!;
+    public DbSet<Grade> Grade { get; set; } = default!;
 
     public DbSet<poms_website_project_2._0.Models.NotificationModel> NotificationModel { get; set; } = default!;
 
@@ -60,7 +62,7 @@ public class PomsDbContext : DbContext
     {
         base.OnModelCreating(modelBuilder);
 
-        modelBuilder.Entity<AdminDetailModel>(entity =>
+        modelBuilder.Entity<AdminDetail>(entity =>
         {
             entity.HasKey(e => e.UserId);
 
@@ -165,7 +167,7 @@ public class PomsDbContext : DbContext
                   .OnDelete(DeleteBehavior.Restrict);
         });
 
-        modelBuilder.Entity<GradeModel>(entity =>
+        modelBuilder.Entity<Grade>(entity =>
         {
             entity.HasKey(e => e.GradeId);
 
