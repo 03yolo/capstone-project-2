@@ -21,7 +21,7 @@ namespace poms_website_project_2._0.Controllers
         // GET: LearnerModels
         public async Task<IActionResult> Index()
         {
-            var pomsDbContext = _context.LearnerModel.Include(l => l.LearnerNavigation);
+            var pomsDbContext = _context.Learner.Include(l => l.LearnerNavigation);
             return View(await pomsDbContext.ToListAsync());
         }
 
@@ -33,7 +33,7 @@ namespace poms_website_project_2._0.Controllers
                 return NotFound();
             }
 
-            var learnerModel = await _context.LearnerModel
+            var learnerModel = await _context.Learner
                 .Include(l => l.LearnerNavigation)
                 .FirstOrDefaultAsync(m => m.UserId == id);
             if (learnerModel == null)
@@ -76,7 +76,7 @@ namespace poms_website_project_2._0.Controllers
                 return NotFound();
             }
 
-            var learnerModel = await _context.LearnerModel.FindAsync(id);
+            var learnerModel = await _context.Learner.FindAsync(id);
             if (learnerModel == null)
             {
                 return NotFound();
@@ -129,7 +129,7 @@ namespace poms_website_project_2._0.Controllers
                 return NotFound();
             }
 
-            var learnerModel = await _context.LearnerModel
+            var learnerModel = await _context.Learner
                 .Include(l => l.LearnerNavigation)
                 .FirstOrDefaultAsync(m => m.UserId == id);
             if (learnerModel == null)
@@ -145,10 +145,10 @@ namespace poms_website_project_2._0.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var learnerModel = await _context.LearnerModel.FindAsync(id);
+            var learnerModel = await _context.Learner.FindAsync(id);
             if (learnerModel != null)
             {
-                _context.LearnerModel.Remove(learnerModel);
+                _context.Learner.Remove(learnerModel);
             }
 
             await _context.SaveChangesAsync();
@@ -157,7 +157,7 @@ namespace poms_website_project_2._0.Controllers
 
         private bool LearnerModelExists(int id)
         {
-            return _context.LearnerModel.Any(e => e.UserId == id);
+            return _context.Learner.Any(e => e.UserId == id);
         }
     }
 }

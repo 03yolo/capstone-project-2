@@ -21,7 +21,7 @@ namespace poms_website_project_2._0.Controllers
         // GET: FacultyModels
         public async Task<IActionResult> Index()
         {
-            var pomsDbContext = _context.FacultyModel.Include(f => f.FacultyNavigation);
+            var pomsDbContext = _context.Faculty.Include(f => f.FacultyNavigation);
             return View(await pomsDbContext.ToListAsync());
         }
 
@@ -33,7 +33,7 @@ namespace poms_website_project_2._0.Controllers
                 return NotFound();
             }
 
-            var facultyModel = await _context.FacultyModel
+            var facultyModel = await _context.Faculty
                 .Include(f => f.FacultyNavigation)
                 .FirstOrDefaultAsync(m => m.UserId == id);
             if (facultyModel == null)
@@ -76,7 +76,7 @@ namespace poms_website_project_2._0.Controllers
                 return NotFound();
             }
 
-            var facultyModel = await _context.FacultyModel.FindAsync(id);
+            var facultyModel = await _context.Faculty.FindAsync(id);
             if (facultyModel == null)
             {
                 return NotFound();
@@ -129,7 +129,7 @@ namespace poms_website_project_2._0.Controllers
                 return NotFound();
             }
 
-            var facultyModel = await _context.FacultyModel
+            var facultyModel = await _context.Faculty
                 .Include(f => f.FacultyNavigation)
                 .FirstOrDefaultAsync(m => m.UserId == id);
             if (facultyModel == null)
@@ -145,10 +145,10 @@ namespace poms_website_project_2._0.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var facultyModel = await _context.FacultyModel.FindAsync(id);
+            var facultyModel = await _context.Faculty.FindAsync(id);
             if (facultyModel != null)
             {
-                _context.FacultyModel.Remove(facultyModel);
+                _context.Faculty.Remove(facultyModel);
             }
 
             await _context.SaveChangesAsync();
@@ -157,7 +157,7 @@ namespace poms_website_project_2._0.Controllers
 
         private bool FacultyModelExists(int id)
         {
-            return _context.FacultyModel.Any(e => e.UserId == id);
+            return _context.Faculty.Any(e => e.UserId == id);
         }
     }
 }

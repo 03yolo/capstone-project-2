@@ -12,6 +12,13 @@ namespace poms_website_project_2._0.Repositories
         public LearnerRepository(PomsDbContext context) : base(context)
         {
             _context = context;
+        } 
+
+        public async Task<Learner> GetByFullNameAsync(string fullName)
+        {
+            return await _context.Learner
+                .Include(s => s.LearnerNavigation)
+                .FirstOrDefaultAsync(s => $"{s.LearnerNavigation.LastName}, {s.LearnerNavigation.FirstName} {s.LearnerNavigation.MiddleName}" == fullName);
         } */
     }
 }

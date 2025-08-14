@@ -1,24 +1,7 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "D:\\College\\CAPSTONE\\VS Files\\poms-repos-2\\capstone-project-2\\poms_website_project_2.0\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{6B53F231-4F56-4BF9-B90A-E40EFAD43D01}|poms_website_project_2.0\\poms_website_project_2.0.csproj|d:\\college\\capstone\\vs files\\poms-repos-2\\capstone-project-2\\poms_website_project_2.0\\poms_website_project_2.0\\data\\pomsdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6B53F231-4F56-4BF9-B90A-E40EFAD43D01}|poms_website_project_2.0\\poms_website_project_2.0.csproj|solutionrelative:poms_website_project_2.0\\data\\pomsdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6B53F231-4F56-4BF9-B90A-E40EFAD43D01}|poms_website_project_2.0\\poms_website_project_2.0.csproj|d:\\college\\capstone\\vs files\\poms-repos-2\\capstone-project-2\\poms_website_project_2.0\\poms_website_project_2.0\\repositories\\ilearnerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6B53F231-4F56-4BF9-B90A-E40EFAD43D01}|poms_website_project_2.0\\poms_website_project_2.0.csproj|solutionrelative:poms_website_project_2.0\\repositories\\ilearnerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6B53F231-4F56-4BF9-B90A-E40EFAD43D01}|poms_website_project_2.0\\poms_website_project_2.0.csproj|d:\\college\\capstone\\vs files\\poms-repos-2\\capstone-project-2\\poms_website_project_2.0\\poms_website_project_2.0\\repositories\\learnerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6B53F231-4F56-4BF9-B90A-E40EFAD43D01}|poms_website_project_2.0\\poms_website_project_2.0.csproj|solutionrelative:poms_website_project_2.0\\repositories\\learnerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6B53F231-4F56-4BF9-B90A-E40EFAD43D01}|poms_website_project_2.0\\poms_website_project_2.0.csproj|d:\\college\\capstone\\vs files\\poms-repos-2\\capstone-project-2\\poms_website_project_2.0\\poms_website_project_2.0\\helpers\\userhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6B53F231-4F56-4BF9-B90A-E40EFAD43D01}|poms_website_project_2.0\\poms_website_project_2.0.csproj|solutionrelative:poms_website_project_2.0\\helpers\\userhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -26,63 +9,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": -1,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "PomsDbContext.cs",
-              "DocumentMoniker": "D:\\College\\CAPSTONE\\VS Files\\poms-repos-2\\capstone-project-2\\poms_website_project_2.0\\poms_website_project_2.0\\Data\\PomsDbContext.cs",
-              "RelativeDocumentMoniker": "poms_website_project_2.0\\Data\\PomsDbContext.cs",
-              "ToolTip": "D:\\College\\CAPSTONE\\VS Files\\poms-repos-2\\capstone-project-2\\poms_website_project_2.0\\poms_website_project_2.0\\Data\\PomsDbContext.cs",
-              "RelativeToolTip": "poms_website_project_2.0\\Data\\PomsDbContext.cs",
-              "ViewState": "AgIAAKAAAAAAAAAAAAAwwK8AAAAtAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-13T15:21:07.922Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "LearnerRepository.cs",
-              "DocumentMoniker": "D:\\College\\CAPSTONE\\VS Files\\poms-repos-2\\capstone-project-2\\poms_website_project_2.0\\poms_website_project_2.0\\Repositories\\LearnerRepository.cs",
-              "RelativeDocumentMoniker": "poms_website_project_2.0\\Repositories\\LearnerRepository.cs",
-              "ToolTip": "D:\\College\\CAPSTONE\\VS Files\\poms-repos-2\\capstone-project-2\\poms_website_project_2.0\\poms_website_project_2.0\\Repositories\\LearnerRepository.cs",
-              "RelativeToolTip": "poms_website_project_2.0\\Repositories\\LearnerRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-13T15:10:00.239Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ILearnerRepository.cs",
-              "DocumentMoniker": "D:\\College\\CAPSTONE\\VS Files\\poms-repos-2\\capstone-project-2\\poms_website_project_2.0\\poms_website_project_2.0\\Repositories\\ILearnerRepository.cs",
-              "RelativeDocumentMoniker": "poms_website_project_2.0\\Repositories\\ILearnerRepository.cs",
-              "ToolTip": "D:\\College\\CAPSTONE\\VS Files\\poms-repos-2\\capstone-project-2\\poms_website_project_2.0\\poms_website_project_2.0\\Repositories\\ILearnerRepository.cs",
-              "RelativeToolTip": "poms_website_project_2.0\\Repositories\\ILearnerRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAA9AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-13T14:51:50.168Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "UserHelper.cs",
-              "DocumentMoniker": "D:\\College\\CAPSTONE\\VS Files\\poms-repos-2\\capstone-project-2\\poms_website_project_2.0\\poms_website_project_2.0\\Helpers\\UserHelper.cs",
-              "RelativeDocumentMoniker": "poms_website_project_2.0\\Helpers\\UserHelper.cs",
-              "ToolTip": "D:\\College\\CAPSTONE\\VS Files\\poms-repos-2\\capstone-project-2\\poms_website_project_2.0\\poms_website_project_2.0\\Helpers\\UserHelper.cs",
-              "RelativeToolTip": "poms_website_project_2.0\\Helpers\\UserHelper.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAApAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-13T14:47:15.219Z",
-              "EditorCaption": ""
             }
           ]
         }

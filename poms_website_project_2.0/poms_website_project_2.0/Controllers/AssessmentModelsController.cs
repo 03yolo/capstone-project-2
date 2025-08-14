@@ -48,7 +48,7 @@ namespace poms_website_project_2._0.Controllers
         // GET: AssessmentModels/Create
         public IActionResult Create()
         {
-            ViewData["FacultyId"] = new SelectList(_context.FacultyModel, "UserId", "EmployeeNo");
+            ViewData["FacultyId"] = new SelectList(_context.Faculty, "UserId", "EmployeeNo");
             ViewData["SubjectId"] = new SelectList(_context.Set<SubjectModel>(), "SubjectId", "SubjectId");
             return View();
         }
@@ -66,7 +66,7 @@ namespace poms_website_project_2._0.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["FacultyId"] = new SelectList(_context.FacultyModel, "UserId", "EmployeeNo", assessmentModel.FacultyId);
+            ViewData["FacultyId"] = new SelectList(_context.Faculty, "UserId", "EmployeeNo", assessmentModel.FacultyId);
             ViewData["SubjectId"] = new SelectList(_context.Set<SubjectModel>(), "SubjectId", "SubjectId", assessmentModel.SubjectId);
             return View(assessmentModel);
         }
@@ -84,7 +84,7 @@ namespace poms_website_project_2._0.Controllers
             {
                 return NotFound();
             }
-            ViewData["FacultyId"] = new SelectList(_context.FacultyModel, "UserId", "EmployeeNo", assessmentModel.FacultyId);
+            ViewData["FacultyId"] = new SelectList(_context.Faculty, "UserId", "EmployeeNo", assessmentModel.FacultyId);
             ViewData["SubjectId"] = new SelectList(_context.Set<SubjectModel>(), "SubjectId", "SubjectId", assessmentModel.SubjectId);
             return View(assessmentModel);
         }
@@ -121,7 +121,7 @@ namespace poms_website_project_2._0.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["FacultyId"] = new SelectList(_context.FacultyModel, "UserId", "EmployeeNo", assessmentModel.FacultyId);
+            ViewData["FacultyId"] = new SelectList(_context.Faculty, "UserId", "EmployeeNo", assessmentModel.FacultyId);
             ViewData["SubjectId"] = new SelectList(_context.Set<SubjectModel>(), "SubjectId", "SubjectId", assessmentModel.SubjectId);
             return View(assessmentModel);
         }
