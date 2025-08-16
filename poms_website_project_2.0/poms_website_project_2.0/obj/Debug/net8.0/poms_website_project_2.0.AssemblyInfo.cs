@@ -16,7 +16,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("poms_website_project_2.0")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+213f6def4cdcaa515519bba6710aa9927a59663f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5c58f9a62bf7f4f6bff9e1997658b2a5fd7371be")]
 [assembly: System.Reflection.AssemblyProductAttribute("poms_website_project_2.0")]
 [assembly: System.Reflection.AssemblyTitleAttribute("poms_website_project_2.0")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -23,8 +23,8 @@ namespace poms_website_project_2._0.Repositories
         // Method to get students by school class ID
         Task<List<Learner>> GetLearnersBySchoolClassIdAsync(int schoolClassId);
 
-        Task<int?> GetLearnerIdByUserIdAsync(string userId);
+        Task<int?> GetLearnerIdByUserIdAsync(int userId);
 
-        Task<Learner> GetLearnerByUserIdAsync(string userId);
+        Task<Learner> GetLearnerByUserIdAsync(int userId);
     }
 }
