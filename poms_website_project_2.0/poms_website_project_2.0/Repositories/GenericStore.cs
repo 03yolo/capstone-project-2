@@ -3,12 +3,12 @@ using poms_website_project_2._0.Data.Entities;
 
 namespace poms_website_project_2._0.Repositories
 {
-    public class GenericRepository<T> : IGenericRepository<T> where T : class, IEntity
+    public class GenericStore<T> : IGenericStore<T> where T : class, IEntity
     {
         private readonly PomsDbContext _context;
 
         // Constructor to initialize the database context
-        public GenericRepository(PomsDbContext context)
+        public GenericStore(PomsDbContext context)
         {
             _context = context;
         }

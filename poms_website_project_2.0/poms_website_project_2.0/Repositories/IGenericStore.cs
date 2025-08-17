@@ -1,6 +1,6 @@
 ﻿namespace poms_website_project_2._0.Repositories
 {
-    public interface IGenericRepository<T> where T : class
+    public interface IGenericStore<T> where T : class
     {
         // return all entities that "T" is using
         IQueryable<T> GetAll();

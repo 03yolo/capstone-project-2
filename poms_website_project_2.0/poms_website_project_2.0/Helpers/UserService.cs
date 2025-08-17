@@ -6,18 +6,18 @@ using poms_website_project_2._0.Data.Entities;
 
 namespace poms_website_project_2._0.Helpers
 {
-    public class UserHelper
+    public class UserService
     {
         private readonly UserManager<User> _userManager;
         private readonly SignInManager<User> _signInManager;
         private readonly RoleManager<IdentityRole> _roleManager;
-        private readonly ILearnerRepository _learnerRepository;
+        private readonly ILearnerStore _learnerRepository;
 
-        public UserHelper(
+        public UserService(
            UserManager<User> userManager,
            SignInManager<User> signInManager,
            RoleManager<IdentityRole> roleManager,
-           ILearnerRepository  learnerRepository)
+           ILearnerStore  learnerRepository)
         {
             _userManager = userManager;
             _signInManager = signInManager;

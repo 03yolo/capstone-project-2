@@ -3,7 +3,7 @@ using poms_website_project_2._0.Models;
 
 namespace poms_website_project_2._0.Repositories
 {
-    public interface ILearnerRepository : IGenericRepository<Learner>
+    public interface ILearnerStore : IGenericStore<Learner>
     {
         // Method to get students by class ID
         Task<IEnumerable<Learner>> GetLearnersBySectionIdAsync(int sectionId);

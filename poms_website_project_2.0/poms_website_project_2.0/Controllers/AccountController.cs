@@ -10,10 +10,10 @@ namespace poms_website_project_2._0.Controllers
 {
     public class AccountController : Controller
     {
-        private readonly IUserHelper _userHelper;
+        private readonly IUserService _userHelper;
 
         public AccountController (
-            IUserHelper userHelper)
+            IUserService userHelper)
         {
             _userHelper = userHelper;
         }

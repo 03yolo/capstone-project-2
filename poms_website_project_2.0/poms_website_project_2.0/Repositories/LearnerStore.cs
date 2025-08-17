@@ -4,12 +4,12 @@ using Microsoft.EntityFrameworkCore;
 
 namespace poms_website_project_2._0.Repositories
 {
-    public class LearnerRepository //: GenericRepository<Learner>, ILearnerRepository
+    public class LearnerStore //: GenericStore<Learner>, ILearnerStore
     {
         /*
         private readonly PomsDbContext _context;
 
-        public LearnerRepository(PomsDbContext context) : base(context)
+        public LearnerStore(PomsDbContext context) : base(context)
         {
             _context = context;
         } 

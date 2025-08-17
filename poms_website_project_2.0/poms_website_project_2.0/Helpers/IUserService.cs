@@ -4,7 +4,7 @@ using poms_website_project_2._0.Models;
 
 namespace poms_website_project_2._0.Helpers
 {
-    public interface IUserHelper
+    public interface IUserService
     {
         // Gets a user by email.
         Task<UserModel> GetUserByEmailAsync(string email);

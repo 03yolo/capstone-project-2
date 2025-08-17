@@ -4,11 +4,11 @@ using MailKit.Net.Smtp;
 
 namespace poms_website_project_2._0.Helpers
 {
-    public class MailHelper : IMailHelper
+    public class MailService : IMailService
     {
         private readonly IConfiguration _configuration;
 
-        public MailHelper(IConfiguration configuration)
+        public MailService(IConfiguration configuration)
         {
             _configuration = configuration;
         }
