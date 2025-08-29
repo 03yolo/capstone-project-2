@@ -40,7 +40,7 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=UserModels}/{action=Index}/{id?}");
+    pattern: "{controller=FacultyModels}/{action=Index}/{id?}");
 app.MapRazorPages();
 
 app.Run();

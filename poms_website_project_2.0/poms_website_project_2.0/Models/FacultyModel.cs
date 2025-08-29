@@ -10,10 +10,10 @@ namespace poms_website_project_2._0.Models
         [ForeignKey("FacultyNavigation")]
         public int UserId { get; set; }
 
-        [Required(ErrorMessage = "Employee Number is required.")]
-        public string EmployeeNo { get; set; } = null!;
+        [Required(ErrorMessage = "Faculty Number is required.")]
+        public string FacultyNumber { get; set; } = null!;
 
-        public string? Designation { get; set; }
+        public string? Position { get; set; }
 
         public virtual ICollection<AssessmentGradeModel> AssessmentGrades { get; set; } = new List<AssessmentGradeModel>();
 
