@@ -15,12 +15,12 @@ namespace poms_website_project_2._0.Data.Entities
 
         public string? Designation { get; set; }
 
-        public virtual ICollection<AssessmentGradeModel> AssessmentGrades { get; set; } = new List<AssessmentGradeModel>();
+        public virtual ICollection<AssessmentGrade> AssessmentGrades { get; set; } = new List<AssessmentGrade>();
 
-        public virtual ICollection<FacultyLoadModel> FacultyLoads { get; set; } = new List<FacultyLoadModel>();
+        public virtual ICollection<FacultyLoad> FacultyLoads { get; set; } = new List<FacultyLoad>();
 
-        public virtual UserModel FacultyNavigation { get; set; } = null!;
+        public virtual User FacultyNavigation { get; set; } = null!;
 
-        public virtual ICollection<GradeModel> Grades { get; set; } = new List<GradeModel>();
+        public virtual ICollection<Grade> Grades { get; set; } = new List<Grade>();
     }
 }

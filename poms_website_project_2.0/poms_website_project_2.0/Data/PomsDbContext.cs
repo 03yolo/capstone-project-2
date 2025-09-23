@@ -13,50 +13,50 @@ public class PomsDbContext : DbContext
     {
     }
     // INDEPENDENT MODELS
-    public DbSet<poms_website_project_2._0.Models.ChangePasswordModel> ChangePasswordModel { get; set; } = default!;
+    // public DbSet<poms_website_project_2._0.Models.ChangePasswordModel> ChangePasswordModel { get; set; } = default!;
 
     public DbSet<Faculty> Faculty{ get; set; } = default!;
 
-    public DbSet<poms_website_project_2._0.Models.HomeCarouselItemModel> HomeCarouselItemModel { get; set; } = default!;
+    // public DbSet<poms_website_project_2._0.Models.HomeCarouselItemModel> HomeCarouselItemModel { get; set; } = default!;
 
     public DbSet<Learner> Learner { get; set; } = default!;
 
     public DbSet<Parent> Parent { get; set; } = default!;
 
-    public DbSet<poms_website_project_2._0.Models.RoleModel> RoleModel { get; set; } = default!;
+    public DbSet<Role> Role { get; set; } = default!;
 
-    public DbSet<poms_website_project_2._0.Models.SchoolYearModel> SchoolYearModel { get; set; } = default!;
+    public DbSet<SchoolYear> SchoolYear{ get; set; } = default!;
 
-    public DbSet<poms_website_project_2._0.Models.SectionModel> SectionModel { get; set; } = default!;
+    public DbSet<Section> Section { get; set; } = default!;
 
-    public DbSet<poms_website_project_2._0.Models.SubjectModel> SubjectModel { get; set; } = default!;
+    public DbSet<Subject> Subject{ get; set; } = default!;
 
-    public DbSet<poms_website_project_2._0.Models.UserModel> UserModel { get; set; } = default!;
+    public DbSet<User> User { get; set; } = default!;
 
    // DEPENDENT MODELS
-    public DbSet<AdminDetail> AdminDetailModel { get; set; } = default!;
+    public DbSet<AdminDetail> AdminDetail { get; set; } = default!;
 
-    public DbSet<poms_website_project_2._0.Models.AssessmentGradeModel> AssessmentGradeModel { get; set; } = default!;
+    public DbSet<AssessmentGrade> AssessmentGrade { get; set; } = default!;
 
-    public DbSet<poms_website_project_2._0.Models.AssessmentModel> AssessmentModel { get; set; } = default!;
+    public DbSet<Assessment> Assessment { get; set; } = default!;
 
-    public DbSet<poms_website_project_2._0.Models.AttendanceModel> AttendanceModel { get; set; } = default!;
+    public DbSet<Attendance> Attendance { get; set; } = default!;
 
-    public DbSet<poms_website_project_2._0.Models.AuditLogModel> AuditLogModel { get; set; } = default!;
+    // public DbSet<AuditLog> AuditLog { get; set; } = default!;
 
-    public DbSet<poms_website_project_2._0.Models.FacultyLoadModel> FacultyLoadModel { get; set; } = default!;
+    public DbSet<FacultyLoad> FacultyLoad { get; set; } = default!;
 
     public DbSet<Grade> Grade { get; set; } = default!;
 
-    public DbSet<poms_website_project_2._0.Models.NotificationModel> NotificationModel { get; set; } = default!;
+    public DbSet<Notification> Notification { get; set; } = default!;
 
-    public DbSet<poms_website_project_2._0.Models.ParentLearnerModel> ParentLearnerModel { get; set; } = default!;
+    public DbSet<ParentLearner> ParentLearner { get; set; } = default!;
 
-    public DbSet<poms_website_project_2._0.Models.QuarterModel> QuarterModel { get; set; } = default!;
+    public DbSet<Quarter> Quarter { get; set; } = default!;
 
-    public DbSet<poms_website_project_2._0.Models.SchoolFormModel> SchoolFormModel { get; set; } = default!;
+    public DbSet<SchoolForm> SchoolForm { get; set; } = default!;
 
-    public DbSet<poms_website_project_2._0.Models.SectionEnrolmentModel> SectionEnrolmentModel { get; set; } = default!;
+    public DbSet<SectionEnrolment> SectionEnrolment { get; set; } = default!;
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -72,7 +72,7 @@ public class PomsDbContext : DbContext
                   .OnDelete(DeleteBehavior.Restrict);
         });
 
-        modelBuilder.Entity<AssessmentGradeModel>(entity =>
+        modelBuilder.Entity<AssessmentGrade>(entity =>
         {
             entity.HasKey(e => e.AssessmentGradeId);
 
@@ -102,7 +102,7 @@ public class PomsDbContext : DbContext
                   .OnDelete(DeleteBehavior.Restrict);
         });
 
-        modelBuilder.Entity<AssessmentModel>(entity =>
+        modelBuilder.Entity<Assessment>(entity =>
         {
             entity.HasKey(e => e.AssessmentId);
 
@@ -122,7 +122,7 @@ public class PomsDbContext : DbContext
                   .OnDelete(DeleteBehavior.Restrict);
         });
 
-        modelBuilder.Entity<AttendanceModel>(entity =>
+        modelBuilder.Entity<Attendance>(entity =>
         {
             entity.HasKey(e => e.AttendanceId);
 
@@ -132,17 +132,8 @@ public class PomsDbContext : DbContext
                   .OnDelete(DeleteBehavior.Restrict);
         });
 
-        modelBuilder.Entity<AuditLogModel>(entity =>
-        {
-            entity.HasKey(e => e.LogId);
-
-            entity.HasOne(g => g.User)
-                  .WithMany()
-                  .HasForeignKey(g => g.UserId)
-                  .OnDelete(DeleteBehavior.Restrict);
-        });
-
-        modelBuilder.Entity<FacultyLoadModel>(entity =>
+       
+        modelBuilder.Entity<FacultyLoad>(entity =>
         {
             entity.HasKey(e => e.LoadId);
 
@@ -187,7 +178,7 @@ public class PomsDbContext : DbContext
                 .OnDelete(DeleteBehavior.Restrict);
         });
 
-        modelBuilder.Entity<NotificationModel>(entity =>
+        modelBuilder.Entity<Notification>(entity =>
         {
             entity.HasKey(e => e.NotificationId);
 
@@ -197,7 +188,7 @@ public class PomsDbContext : DbContext
                   .OnDelete(DeleteBehavior.Restrict);
         });
 
-        modelBuilder.Entity<ParentLearnerModel>(entity =>
+        modelBuilder.Entity<ParentLearner>(entity =>
         {
             entity.HasKey(e => e.ParentId);
 
@@ -212,7 +203,7 @@ public class PomsDbContext : DbContext
                   .OnDelete(DeleteBehavior.Restrict);
         });
 
-        modelBuilder.Entity<QuarterModel>(entity =>
+        modelBuilder.Entity<Quarter>(entity =>
         {
             entity.HasKey(e => e.QuarterId);
 
@@ -222,7 +213,7 @@ public class PomsDbContext : DbContext
                   .OnDelete(DeleteBehavior.Restrict);
         });
 
-        modelBuilder.Entity<SchoolFormModel>(entity =>
+        modelBuilder.Entity<SchoolForm>(entity =>
         {
             entity.HasKey(e => e.FormId);
 
@@ -232,7 +223,7 @@ public class PomsDbContext : DbContext
                   .OnDelete(DeleteBehavior.Restrict);
         });
 
-        modelBuilder.Entity<SectionEnrolmentModel>(entity =>
+        modelBuilder.Entity<SectionEnrolment>(entity =>
         {
             entity.HasKey(e => e.EnrolId);
 

@@ -19,18 +19,18 @@ namespace poms_website_project_2._0.Data.Entities
         [Required(ErrorMessage = "Learner's grade level is required.")]
         public byte GradeLevel { get; set; }
 
-        public virtual ICollection<AssessmentGradeModel> AssessmentGrades { get; set; } = new List<AssessmentGradeModel>();
+        public virtual ICollection<AssessmentGrade> AssessmentGrades { get; set; } = new List<AssessmentGrade>();
 
-        public virtual ICollection<AttendanceModel> Attendances { get; set; } = new List<AttendanceModel>();
+        public virtual ICollection<Attendance> Attendances { get; set; } = new List<Attendance>();
 
-        public virtual ICollection<GradeModel> Grades { get; set; } = new List<GradeModel>();
+        public virtual ICollection<Grade> Grades { get; set; } = new List<Grade>();
 
-        public virtual UserModel LearnerNavigation { get; set; } = null!;
+        public virtual User LearnerNavigation { get; set; } = null!;
 
-        public virtual ICollection<ParentLearnerModel> ParentLearners { get; set; } = new List<ParentLearnerModel>();
+        public virtual ICollection<ParentLearner> ParentLearners { get; set; } = new List<ParentLearner>();
 
-        public virtual ICollection<SchoolFormModel> SchoolForms { get; set; } = new List<SchoolFormModel>();
+        public virtual ICollection<SchoolForm> SchoolForms { get; set; } = new List<SchoolForm>();
 
-        public virtual ICollection<SectionEnrolmentModel> SectionEnrolments { get; set; } = new List<SectionEnrolmentModel>();
+        public virtual ICollection<SectionEnrolment> SectionEnrolments { get; set; } = new List<SectionEnrolment>();
     }
 }

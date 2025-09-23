@@ -16,6 +16,6 @@ namespace poms_website_project_2._0.Data.Entities
 
         public string? ContactNo { get; set; }
 
-        public virtual UserModel Admin { get; set; } = null!;
+        public virtual User Admin { get; set; } = null!;
     }
 }
