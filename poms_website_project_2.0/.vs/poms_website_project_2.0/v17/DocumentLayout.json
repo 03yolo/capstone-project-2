@@ -1,48 +1,7 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Ammiel Jamir\\Desktop\\Capstone Project 2025\\capstone-repos-2\\capstone-project-2\\poms_website_project_2.0\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{6B53F231-4F56-4BF9-B90A-E40EFAD43D01}|poms_website_project_2.0\\poms_website_project_2.0.csproj|c:\\users\\ammiel jamir\\desktop\\capstone project 2025\\capstone-repos-2\\capstone-project-2\\poms_website_project_2.0\\poms_website_project_2.0\\views\\shared\\_dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{6B53F231-4F56-4BF9-B90A-E40EFAD43D01}|poms_website_project_2.0\\poms_website_project_2.0.csproj|solutionrelative:poms_website_project_2.0\\views\\shared\\_dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6B53F231-4F56-4BF9-B90A-E40EFAD43D01}|poms_website_project_2.0\\poms_website_project_2.0.csproj|c:\\users\\ammiel jamir\\desktop\\capstone project 2025\\capstone-repos-2\\capstone-project-2\\poms_website_project_2.0\\poms_website_project_2.0\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6B53F231-4F56-4BF9-B90A-E40EFAD43D01}|poms_website_project_2.0\\poms_website_project_2.0.csproj|solutionrelative:poms_website_project_2.0\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6B53F231-4F56-4BF9-B90A-E40EFAD43D01}|poms_website_project_2.0\\poms_website_project_2.0.csproj|c:\\users\\ammiel jamir\\desktop\\capstone project 2025\\capstone-repos-2\\capstone-project-2\\poms_website_project_2.0\\poms_website_project_2.0\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6B53F231-4F56-4BF9-B90A-E40EFAD43D01}|poms_website_project_2.0\\poms_website_project_2.0.csproj|solutionrelative:poms_website_project_2.0\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6B53F231-4F56-4BF9-B90A-E40EFAD43D01}|poms_website_project_2.0\\poms_website_project_2.0.csproj|c:\\users\\ammiel jamir\\desktop\\capstone project 2025\\capstone-repos-2\\capstone-project-2\\poms_website_project_2.0\\poms_website_project_2.0\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{6B53F231-4F56-4BF9-B90A-E40EFAD43D01}|poms_website_project_2.0\\poms_website_project_2.0.csproj|solutionrelative:poms_website_project_2.0\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6B53F231-4F56-4BF9-B90A-E40EFAD43D01}|poms_website_project_2.0\\poms_website_project_2.0.csproj|c:\\users\\ammiel jamir\\desktop\\capstone project 2025\\capstone-repos-2\\capstone-project-2\\poms_website_project_2.0\\poms_website_project_2.0\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{6B53F231-4F56-4BF9-B90A-E40EFAD43D01}|poms_website_project_2.0\\poms_website_project_2.0.csproj|solutionrelative:poms_website_project_2.0\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6B53F231-4F56-4BF9-B90A-E40EFAD43D01}|poms_website_project_2.0\\poms_website_project_2.0.csproj|c:\\users\\ammiel jamir\\desktop\\capstone project 2025\\capstone-repos-2\\capstone-project-2\\poms_website_project_2.0\\poms_website_project_2.0\\wwwroot\\css\\dashboard.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{6B53F231-4F56-4BF9-B90A-E40EFAD43D01}|poms_website_project_2.0\\poms_website_project_2.0.csproj|solutionrelative:poms_website_project_2.0\\wwwroot\\css\\dashboard.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6B53F231-4F56-4BF9-B90A-E40EFAD43D01}|poms_website_project_2.0\\poms_website_project_2.0.csproj|c:\\users\\ammiel jamir\\desktop\\capstone project 2025\\capstone-repos-2\\capstone-project-2\\poms_website_project_2.0\\poms_website_project_2.0\\views\\account\\loginpage.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{6B53F231-4F56-4BF9-B90A-E40EFAD43D01}|poms_website_project_2.0\\poms_website_project_2.0.csproj|solutionrelative:poms_website_project_2.0\\views\\account\\loginpage.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6B53F231-4F56-4BF9-B90A-E40EFAD43D01}|poms_website_project_2.0\\poms_website_project_2.0.csproj|c:\\users\\ammiel jamir\\desktop\\capstone project 2025\\capstone-repos-2\\capstone-project-2\\poms_website_project_2.0\\poms_website_project_2.0\\views\\account\\fp_getemail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{6B53F231-4F56-4BF9-B90A-E40EFAD43D01}|poms_website_project_2.0\\poms_website_project_2.0.csproj|solutionrelative:poms_website_project_2.0\\views\\account\\fp_getemail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6B53F231-4F56-4BF9-B90A-E40EFAD43D01}|poms_website_project_2.0\\poms_website_project_2.0.csproj|c:\\users\\ammiel jamir\\desktop\\capstone project 2025\\capstone-repos-2\\capstone-project-2\\poms_website_project_2.0\\poms_website_project_2.0\\helpers\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6B53F231-4F56-4BF9-B90A-E40EFAD43D01}|poms_website_project_2.0\\poms_website_project_2.0.csproj|solutionrelative:poms_website_project_2.0\\helpers\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6B53F231-4F56-4BF9-B90A-E40EFAD43D01}|poms_website_project_2.0\\poms_website_project_2.0.csproj|c:\\users\\ammiel jamir\\desktop\\capstone project 2025\\capstone-repos-2\\capstone-project-2\\poms_website_project_2.0\\poms_website_project_2.0\\helpers\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6B53F231-4F56-4BF9-B90A-E40EFAD43D01}|poms_website_project_2.0\\poms_website_project_2.0.csproj|solutionrelative:poms_website_project_2.0\\helpers\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "WorkspaceRootPath": "D:\\College\\CAPSTONE\\VS Files\\poms-repos-2\\capstone-project-2\\poms_website_project_2.0\\",
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -50,139 +9,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": -1,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "AccountController.cs",
-              "DocumentMoniker": "C:\\Users\\Ammiel Jamir\\Desktop\\Capstone Project 2025\\capstone-repos-2\\capstone-project-2\\poms_website_project_2.0\\poms_website_project_2.0\\Controllers\\AccountController.cs",
-              "RelativeDocumentMoniker": "poms_website_project_2.0\\Controllers\\AccountController.cs",
-              "ToolTip": "C:\\Users\\Ammiel Jamir\\Desktop\\Capstone Project 2025\\capstone-repos-2\\capstone-project-2\\poms_website_project_2.0\\poms_website_project_2.0\\Controllers\\AccountController.cs",
-              "RelativeToolTip": "poms_website_project_2.0\\Controllers\\AccountController.cs",
-              "ViewState": "AgIAAA8AAAAAAAAAAAApwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-26T15:30:16.918Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Ammiel Jamir\\Desktop\\Capstone Project 2025\\capstone-repos-2\\capstone-project-2\\poms_website_project_2.0\\poms_website_project_2.0\\Program.cs",
-              "RelativeDocumentMoniker": "poms_website_project_2.0\\Program.cs",
-              "ToolTip": "C:\\Users\\Ammiel Jamir\\Desktop\\Capstone Project 2025\\capstone-repos-2\\capstone-project-2\\poms_website_project_2.0\\poms_website_project_2.0\\Program.cs",
-              "RelativeToolTip": "poms_website_project_2.0\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAgAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-26T15:28:18.293Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "_ViewStart.cshtml",
-              "DocumentMoniker": "C:\\Users\\Ammiel Jamir\\Desktop\\Capstone Project 2025\\capstone-repos-2\\capstone-project-2\\poms_website_project_2.0\\poms_website_project_2.0\\Views\\_ViewStart.cshtml",
-              "RelativeDocumentMoniker": "poms_website_project_2.0\\Views\\_ViewStart.cshtml",
-              "ToolTip": "C:\\Users\\Ammiel Jamir\\Desktop\\Capstone Project 2025\\capstone-repos-2\\capstone-project-2\\poms_website_project_2.0\\poms_website_project_2.0\\Views\\_ViewStart.cshtml",
-              "RelativeToolTip": "poms_website_project_2.0\\Views\\_ViewStart.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-08-26T15:28:17.033Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "LoginPage.cshtml",
-              "DocumentMoniker": "C:\\Users\\Ammiel Jamir\\Desktop\\Capstone Project 2025\\capstone-repos-2\\capstone-project-2\\poms_website_project_2.0\\poms_website_project_2.0\\Views\\Account\\LoginPage.cshtml",
-              "RelativeDocumentMoniker": "poms_website_project_2.0\\Views\\Account\\LoginPage.cshtml",
-              "ToolTip": "C:\\Users\\Ammiel Jamir\\Desktop\\Capstone Project 2025\\capstone-repos-2\\capstone-project-2\\poms_website_project_2.0\\poms_website_project_2.0\\Views\\Account\\LoginPage.cshtml",
-              "RelativeToolTip": "poms_website_project_2.0\\Views\\Account\\LoginPage.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-08-26T15:23:07.684Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "site.css",
-              "DocumentMoniker": "C:\\Users\\Ammiel Jamir\\Desktop\\Capstone Project 2025\\capstone-repos-2\\capstone-project-2\\poms_website_project_2.0\\poms_website_project_2.0\\wwwroot\\css\\site.css",
-              "RelativeDocumentMoniker": "poms_website_project_2.0\\wwwroot\\css\\site.css",
-              "ToolTip": "C:\\Users\\Ammiel Jamir\\Desktop\\Capstone Project 2025\\capstone-repos-2\\capstone-project-2\\poms_website_project_2.0\\poms_website_project_2.0\\wwwroot\\css\\site.css",
-              "RelativeToolTip": "poms_website_project_2.0\\wwwroot\\css\\site.css",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-08-25T16:11:45.9Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "_Dashboard.cshtml",
-              "DocumentMoniker": "C:\\Users\\Ammiel Jamir\\Desktop\\Capstone Project 2025\\capstone-repos-2\\capstone-project-2\\poms_website_project_2.0\\poms_website_project_2.0\\Views\\Shared\\_Dashboard.cshtml",
-              "RelativeDocumentMoniker": "poms_website_project_2.0\\Views\\Shared\\_Dashboard.cshtml",
-              "ToolTip": "C:\\Users\\Ammiel Jamir\\Desktop\\Capstone Project 2025\\capstone-repos-2\\capstone-project-2\\poms_website_project_2.0\\poms_website_project_2.0\\Views\\Shared\\_Dashboard.cshtml",
-              "RelativeToolTip": "poms_website_project_2.0\\Views\\Shared\\_Dashboard.cshtml",
-              "ViewState": "AgIAAE4AAAAAAAAAAAAowGQAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-08-19T05:26:07.262Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "FP_GetEmail.cshtml",
-              "DocumentMoniker": "C:\\Users\\Ammiel Jamir\\Desktop\\Capstone Project 2025\\capstone-repos-2\\capstone-project-2\\poms_website_project_2.0\\poms_website_project_2.0\\Views\\Account\\FP_GetEmail.cshtml",
-              "RelativeDocumentMoniker": "poms_website_project_2.0\\Views\\Account\\FP_GetEmail.cshtml",
-              "ToolTip": "C:\\Users\\Ammiel Jamir\\Desktop\\Capstone Project 2025\\capstone-repos-2\\capstone-project-2\\poms_website_project_2.0\\poms_website_project_2.0\\Views\\Account\\FP_GetEmail.cshtml",
-              "RelativeToolTip": "poms_website_project_2.0\\Views\\Account\\FP_GetEmail.cshtml",
-              "ViewState": "AgIAAG8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-08-26T02:45:48.191Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "dashboard.css",
-              "DocumentMoniker": "C:\\Users\\Ammiel Jamir\\Desktop\\Capstone Project 2025\\capstone-repos-2\\capstone-project-2\\poms_website_project_2.0\\poms_website_project_2.0\\wwwroot\\css\\dashboard.css",
-              "RelativeDocumentMoniker": "poms_website_project_2.0\\wwwroot\\css\\dashboard.css",
-              "ToolTip": "C:\\Users\\Ammiel Jamir\\Desktop\\Capstone Project 2025\\capstone-repos-2\\capstone-project-2\\poms_website_project_2.0\\poms_website_project_2.0\\wwwroot\\css\\dashboard.css",
-              "RelativeToolTip": "poms_website_project_2.0\\wwwroot\\css\\dashboard.css",
-              "ViewState": "AgIAAGMAAAAAAAAAAAAtwJYAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-08-25T16:04:18.595Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "UserService.cs",
-              "DocumentMoniker": "C:\\Users\\Ammiel Jamir\\Desktop\\Capstone Project 2025\\capstone-repos-2\\capstone-project-2\\poms_website_project_2.0\\poms_website_project_2.0\\Helpers\\UserService.cs",
-              "RelativeDocumentMoniker": "poms_website_project_2.0\\Helpers\\UserService.cs",
-              "ToolTip": "C:\\Users\\Ammiel Jamir\\Desktop\\Capstone Project 2025\\capstone-repos-2\\capstone-project-2\\poms_website_project_2.0\\poms_website_project_2.0\\Helpers\\UserService.cs",
-              "RelativeToolTip": "poms_website_project_2.0\\Helpers\\UserService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAZAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-17T14:20:17.639Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "IUserService.cs",
-              "DocumentMoniker": "C:\\Users\\Ammiel Jamir\\Desktop\\Capstone Project 2025\\capstone-repos-2\\capstone-project-2\\poms_website_project_2.0\\poms_website_project_2.0\\Helpers\\IUserService.cs",
-              "RelativeDocumentMoniker": "poms_website_project_2.0\\Helpers\\IUserService.cs",
-              "ToolTip": "C:\\Users\\Ammiel Jamir\\Desktop\\Capstone Project 2025\\capstone-repos-2\\capstone-project-2\\poms_website_project_2.0\\poms_website_project_2.0\\Helpers\\IUserService.cs",
-              "RelativeToolTip": "poms_website_project_2.0\\Helpers\\IUserService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAhAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-17T14:20:15.307Z"
             }
           ]
         }

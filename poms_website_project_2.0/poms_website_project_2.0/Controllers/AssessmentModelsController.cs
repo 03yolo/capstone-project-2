@@ -21,7 +21,7 @@ namespace poms_website_project_2._0.Controllers
         // GET: AssessmentModels
         public async Task<IActionResult> Index()
         {
-            var pomsDbContext = _context.AssessmentModel.Include(a => a.Faculty).Include(a => a.Subject);
+            var pomsDbContext = _context.Assessment.Include(a => a.Faculty).Include(a => a.Subject);
             return View(await pomsDbContext.ToListAsync());
         }
 
@@ -33,7 +33,7 @@ namespace poms_website_project_2._0.Controllers
                 return NotFound();
             }
 
-            var assessmentModel = await _context.AssessmentModel
+            var assessmentModel = await _context.Assessment
                 .Include(a => a.Faculty)
                 .Include(a => a.Subject)
                 .FirstOrDefaultAsync(m => m.AssessmentId == id);
@@ -79,7 +79,7 @@ namespace poms_website_project_2._0.Controllers
                 return NotFound();
             }
 
-            var assessmentModel = await _context.AssessmentModel.FindAsync(id);
+            var assessmentModel = await _context.Assessment.FindAsync(id);
             if (assessmentModel == null)
             {
                 return NotFound();
@@ -134,7 +134,7 @@ namespace poms_website_project_2._0.Controllers
                 return NotFound();
             }
 
-            var assessmentModel = await _context.AssessmentModel
+            var assessmentModel = await _context.Assessment
                 .Include(a => a.Faculty)
                 .Include(a => a.Subject)
                 .FirstOrDefaultAsync(m => m.AssessmentId == id);
@@ -151,10 +151,10 @@ namespace poms_website_project_2._0.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var assessmentModel = await _context.AssessmentModel.FindAsync(id);
+            var assessmentModel = await _context.Assessment.FindAsync(id);
             if (assessmentModel != null)
             {
-                _context.AssessmentModel.Remove(assessmentModel);
+                _context.Assessment.Remove(assessmentModel);
             }
 
             await _context.SaveChangesAsync();
@@ -163,7 +163,7 @@ namespace poms_website_project_2._0.Controllers
 
         private bool AssessmentModelExists(int id)
         {
-            return _context.AssessmentModel.Any(e => e.AssessmentId == id);
+            return _context.Assessment.Any(e => e.AssessmentId == id);
         }
     }
 }

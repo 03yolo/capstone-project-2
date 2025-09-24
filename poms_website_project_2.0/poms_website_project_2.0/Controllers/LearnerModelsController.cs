@@ -47,7 +47,7 @@ namespace poms_website_project_2._0.Controllers
         // GET: LearnerModels/Create
         public IActionResult Create()
         {
-            ViewData["UserId"] = new SelectList(_context.UserModel, "UserId", "UserId");
+            ViewData["UserId"] = new SelectList(_context.User, "UserId", "UserId");
             return View();
         }
 
@@ -64,7 +64,7 @@ namespace poms_website_project_2._0.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["UserId"] = new SelectList(_context.UserModel, "UserId", "UserId", learnerModel.UserId);
+            ViewData["UserId"] = new SelectList(_context.User, "UserId", "UserId", learnerModel.UserId);
             return View(learnerModel);
         }
 
@@ -81,7 +81,7 @@ namespace poms_website_project_2._0.Controllers
             {
                 return NotFound();
             }
-            ViewData["UserId"] = new SelectList(_context.UserModel, "UserId", "UserId", learnerModel.UserId);
+            ViewData["UserId"] = new SelectList(_context.User, "UserId", "UserId", learnerModel.UserId);
             return View(learnerModel);
         }
 
@@ -117,7 +117,7 @@ namespace poms_website_project_2._0.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["UserId"] = new SelectList(_context.UserModel, "UserId", "UserId", learnerModel.UserId);
+            ViewData["UserId"] = new SelectList(_context.User, "UserId", "UserId", learnerModel.UserId);
             return View(learnerModel);
         }
 

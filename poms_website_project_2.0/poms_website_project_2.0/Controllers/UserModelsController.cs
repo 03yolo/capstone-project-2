@@ -21,7 +21,7 @@ namespace poms_website_project_2._0.Controllers
         // GET: UserModels
         public async Task<IActionResult> Index()
         {
-            var pomsDbContext = _context.UserModel.Include(u => u.Role);
+            var pomsDbContext = _context.User.Include(u => u.Role);
             return View(await pomsDbContext.ToListAsync());
         }
 
@@ -33,7 +33,7 @@ namespace poms_website_project_2._0.Controllers
                 return NotFound();
             }
 
-            var userModel = await _context.UserModel
+            var userModel = await _context.User
                 .Include(u => u.Role)
                 .FirstOrDefaultAsync(m => m.UserId == id);
             if (userModel == null)
@@ -76,7 +76,7 @@ namespace poms_website_project_2._0.Controllers
                 return NotFound();
             }
 
-            var userModel = await _context.UserModel.FindAsync(id);
+            var userModel = await _context.User.FindAsync(id);
             if (userModel == null)
             {
                 return NotFound();
@@ -129,7 +129,7 @@ namespace poms_website_project_2._0.Controllers
                 return NotFound();
             }
 
-            var userModel = await _context.UserModel
+            var userModel = await _context.User
                 .Include(u => u.Role)
                 .FirstOrDefaultAsync(m => m.UserId == id);
             if (userModel == null)
@@ -145,10 +145,10 @@ namespace poms_website_project_2._0.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var userModel = await _context.UserModel.FindAsync(id);
+            var userModel = await _context.User.FindAsync(id);
             if (userModel != null)
             {
-                _context.UserModel.Remove(userModel);
+                _context.User.Remove(userModel);
             }
 
             await _context.SaveChangesAsync();
@@ -157,7 +157,7 @@ namespace poms_website_project_2._0.Controllers
 
         private bool UserModelExists(int id)
         {
-            return _context.UserModel.Any(e => e.UserId == id);
+            return _context.User.Any(e => e.UserId == id);
         }
     }
 }
