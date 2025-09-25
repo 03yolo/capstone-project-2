@@ -1,0 +1,105 @@
+﻿@model poms_website_project_2._0.Data.Entities.Grade
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Grade</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="LearnerId" class="control-label"></label>
+                <select asp-for="LearnerId" class ="form-control" asp-items="ViewBag.LearnerId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="FacultyId" class="control-label"></label>
+                <select asp-for="FacultyId" class ="form-control" asp-items="ViewBag.FacultyId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="SubjectId" class="control-label"></label>
+                <select asp-for="SubjectId" class ="form-control" asp-items="ViewBag.SubjectId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Quarter" class="control-label"></label>
+                <input asp-for="Quarter" class="form-control" />
+                <span asp-validation-for="Quarter" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="WwScore" class="control-label"></label>
+                <input asp-for="WwScore" class="form-control" />
+                <span asp-validation-for="WwScore" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="WwTotal" class="control-label"></label>
+                <input asp-for="WwTotal" class="form-control" />
+                <span asp-validation-for="WwTotal" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="WwPercentage" class="control-label"></label>
+                <input asp-for="WwPercentage" class="form-control" />
+                <span asp-validation-for="WwPercentage" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PtScore" class="control-label"></label>
+                <input asp-for="PtScore" class="form-control" />
+                <span asp-validation-for="PtScore" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PtTotal" class="control-label"></label>
+                <input asp-for="PtTotal" class="form-control" />
+                <span asp-validation-for="PtTotal" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PtPercentage" class="control-label"></label>
+                <input asp-for="PtPercentage" class="form-control" />
+                <span asp-validation-for="PtPercentage" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="QaScore" class="control-label"></label>
+                <input asp-for="QaScore" class="form-control" />
+                <span asp-validation-for="QaScore" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="QaTotal" class="control-label"></label>
+                <input asp-for="QaTotal" class="form-control" />
+                <span asp-validation-for="QaTotal" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="QaPercentage" class="control-label"></label>
+                <input asp-for="QaPercentage" class="form-control" />
+                <span asp-validation-for="QaPercentage" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FinalGrade" class="control-label"></label>
+                <input asp-for="FinalGrade" class="form-control" />
+                <span asp-validation-for="FinalGrade" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Remarks" class="control-label"></label>
+                <input asp-for="Remarks" class="form-control" />
+                <span asp-validation-for="Remarks" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EncodedAt" class="control-label"></label>
+                <input asp-for="EncodedAt" class="form-control" />
+                <span asp-validation-for="EncodedAt" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

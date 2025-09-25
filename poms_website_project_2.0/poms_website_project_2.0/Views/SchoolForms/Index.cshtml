@@ -1,0 +1,59 @@
+﻿@model IEnumerable<poms_website_project_2._0.Data.Entities.SchoolForm>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FormType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FilePath)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GeneratedBy)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GeneratedAt)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Learner)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FormType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FilePath)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GeneratedBy)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GeneratedAt)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Learner.Lrn)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.FormId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.FormId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.FormId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

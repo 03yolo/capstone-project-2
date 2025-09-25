@@ -1,0 +1,125 @@
+﻿@model IEnumerable<poms_website_project_2._0.Data.Entities.Grade>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Quarter)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WwScore)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WwTotal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WwPercentage)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PtScore)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PtTotal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PtPercentage)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.QaScore)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.QaTotal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.QaPercentage)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FinalGrade)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Remarks)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EncodedAt)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Faculty)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Learner)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Subject)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Quarter)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.WwScore)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.WwTotal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.WwPercentage)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PtScore)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PtTotal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PtPercentage)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.QaScore)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.QaTotal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.QaPercentage)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FinalGrade)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Remarks)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EncodedAt)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Faculty.EmployeeNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Learner.Lrn)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Subject.SubjectId)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.GradeId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.GradeId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.GradeId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
