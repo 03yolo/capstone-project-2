@@ -7,6 +7,10 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using poms_website_project_2._0.Models;
 
+// ASSIGNED TO AMMIEL AND/OR YVES
+// Helpers: ITeacherRepository, ISubjectRepository, ISchoolClassRepository, IBlobHelper
+// IConverterHelper, IUserHelper, ILogger<FacultyModelsController>
+
 namespace poms_website_project_2._0.Controllers
 {
     public class FacultyModelsController : Controller

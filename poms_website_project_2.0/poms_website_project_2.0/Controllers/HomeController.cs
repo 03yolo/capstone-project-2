@@ -2,6 +2,9 @@ using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using poms_website_project_2._0.Models;
 
+// ASSIGNED TO LORENZE
+// Helpers: ILogger<HomeController>, ICourseRepository, ISchoolClassRepository, IAlertRepository
+
 namespace poms_website_project_2._0.Controllers
 {
     public class HomeController : Controller

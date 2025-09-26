@@ -7,6 +7,10 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using poms_website_project_2._0.Data.Entities;
 
+// ASSIGNED TO YVES AND LORENZE
+// Helpers: IGradeRepository, IStudentRepository, ISchoolClassRepository, IConverterHelper
+// ISubjectRepository, ILogger<GradesController>
+
 namespace poms_website_project_2._0.Controllers
 {
     public class GradesController : Controller

@@ -7,6 +7,10 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using poms_website_project_2._0.Models;
 
+// ASSIGN TO AMMIEL AND YVES
+// Helpers: ILearnerRepository, IBlobHelper, IConverterHelper, ISchoolClassRepository
+// IUserHelper, ILogger<LearnerModelsController>
+
 namespace poms_website_project_2._0.Controllers
 {
     public class LearnerModelsController : Controller

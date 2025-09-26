@@ -5,6 +5,8 @@ using Microsoft.EntityFrameworkCore;
 using poms_website_project_2._0.Helpers;
 using poms_website_project_2._0.Models;
 
+// ASSIGNED TO LORENZE
+// Helpers: IUserHelper, IMailHelper, IConfiguration
 
 namespace poms_website_project_2._0.Controllers
 {
